@@ -1,0 +1,36 @@
+.menu {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 65px;
+}
+.logo_title {
+    font-size: 36px;
+    font-weight: bold;
+}
+.menu_list {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    align-items: center;
+}
+.social_icons {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+@each $var in insta, vk, github {
+    .#{$var} {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background: svg-load('#{$var}.svg', fill=#706a65, width=100%, height=100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+}
+.menu_link {
+    text-decoration: none;
+}

@@ -10,6 +10,234 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+        .one_block
+          .container
+            .menu
+              .logo
+                .logo_title ША
+              .menu_nav
+                ul.menu_list
+                  - var array_menu = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться ']
+                  - for(var i = 0; i < array_menu.length; i++)
+                    li.meni_item
+                      a(href="#").menu_link= array_menu[i]
+              .social
+                .social_in
+                  ul.social_icons
+                    - var array_icons = ['insta','vk','github']
+                    - for(var i = 0; i < array_icons.length; i++)
+                      li.social_item
+                        div(class=array_icons[i])
+                          a(href="#").social_link
+                          //- +icon(array_icons[i], social_ico)
+
+            .center_content
+              .content_text
+                .text_in
+                  span Шахмир
+                  span Ахмедилов
+                .mini
+                  span Личный сайт
+                  span веб разработчика
+            .scroll
+              .scroll_in
+                .scroll_text Скролл
+                .scroll_ico
+        .two_block
+          .container
+            .block_user
+              .block_left
+                .left_avatar
+                  .avatar
+                    +image('content/user.jpg', 'user_pic')
+                .left_info
+                  - var array_ask = ['Проживаю:','Возраст:','Родился:']
+                  - var array_text = [' Санкт-Петербург',' 22 лет',' 07 Июля 1996']
+                  - for(var i = 0; i < array_ask.length; i++)
+                    .info
+                      span.one= array_ask[i]
+                      span.two= array_text[i]
+              .block_right
+                .right_welcome
+                  span Привет, меня зовут
+                  h1 Шахмир Ахмедилов
+                  span Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .right_text
+                  span.star *
+                  span Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .three_block
+          .img_klava
+          .container
+            .skill_info
+              .skill_text
+                h2 Чем я могу быть полезен вам
+                span Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              .skill_data
+                .front-end
+                  h2 Front-end
+                    .rounds
+                      .data 
+                        span HTML5
+                        svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg 
+                          circle.circle(cx="50" cy="50" r="40").circle_under
+                          circle.circle(cx="50" cy="50" r="40" style="animation-delay: -55s").circle_above
+                      .data  
+                        span CSS3                
+                        svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg
+                          circle.circle(cx="50" cy="50" r="40").circle_under
+                          circle.circle(cx="50" cy="50" r="40" style="animation-delay: -45s").circle_above
+                      .data
+                        span JavaScript
+                        svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg
+                          circle.circle(cx="50" cy="50" r="40").circle_under
+                          circle.circle(cx="50" cy="50" r="40" style="animation-delay: -25s").circle_above
+                      .data
+                        span JQuery и Vue.js
+                        svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg
+                          circle.circle(cx="50" cy="50" r="40").circle_under
+                          circle.circle(cx="50" cy="50" r="40" style="animation-delay: -15s").circle_above
+                .workflow
+                  h2 WorkFlow
+                    .rounds
+                      .data
+                        span GIT
+                        svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg
+                          circle.circle(cx="50" cy="50" r="40").circle_under
+                          circle.circle(cx="50" cy="50" r="40" style="animation-delay: -40s").circle_above
+                      .data
+                        span Terminal
+                        svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg
+                          circle.circle(cx="50" cy="50" r="40").circle_under
+                          circle.circle(cx="50" cy="50" r="40" style="animation-delay: -45s").circle_above
+                      .data
+                        span Gulp
+                        svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg
+                          circle.circle(cx="50" cy="50" r="40").circle_under
+                          circle.circle(cx="50" cy="50" r="40" style="animation-delay: -10s").circle_above
+                      .data
+                        span Webpack
+                        svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg
+                          circle.circle(cx="50" cy="50" r="40").circle_under
+                          circle.circle(cx="50" cy="50" r="40" style="animation-delay: -10s").circle_above  
+        .four_block
+          .container
+            .my_work
+              .block_slaid
+                h2 Мои Работы
+                .slaid_pic
+                  +image('content/slaider/big_pic.png', 'big_pic')
+                  .slaid
+                    ul.slaid_list
+                      - var array_slaids = ['one','two','three','four']
+                      - for(var i = 0; i < array_slaids.length; i++)
+                        li.slaid_item
+                          a.slaid_link(href="#")
+                            +image(`content/slaider/${array_slaids[i]}.png`, 'slaid_pic')
+                    .scrolls
+                      .right_in
+                        .right
+                      .left_in
+                        .left
+              .block_info
+                .info_tags
+                  span HTML
+                  span CSS
+                  span JavaScript
+                .info_text
+                  h2 Сайт школы образования
+                  span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                .info_link
+                  .svg_link
+                  a.link(href="#") Посмотреть сайт
+            .number 2      
+        .five_block
+          +image('content/sheet_one.png', 'sheet_one')
+          +image('content/sheet_two.png', 'sheet_two')
+          +image('content/sheet_three.png', 'sheet_three')
+          +image('content/sheet_four.png', 'sheet_four')
+          .container
+            .reviews_call
+              .reviews
+                .reviews_scroll
+                  h1  Что обо мне говорят
+                  .scrolls
+                    .left_scroll
+                    .right_scroll
+                .reviews_info
+                  .review
+                    .review_text_one
+                      span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .info_review
+                      .review_avatar
+                        
+                        .rev_user2
+                      .review_text
+                        h3 Ковальчук Дмитрий
+                        span Оснаватель LoftSchool
+                  .review
+                    .review_text_one
+                      span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .info_review
+                      .review_avatar
+                        
+                        .rev_user3
+                      .review_text
+                        h3 Владимир Сабанцев
+                        span Оснаватель LoftSchool
+              .call
+                .title Связаться со мной
+                form.form
+                  .name_email
+                    .name
+                      .text_in Введите ваше имя
+                      label.label
+                        .label_in
+                          +icon('user', 'user_input')
+                          .input
+                            input(name="name" type="name" class="name_input" placeholder="Шахмир Ахмедилов" required)
+                    .email
+                      .text_in Введите ваш email
+                      label.label
+                        .label_in
+                          +icon('envelope', 'envelope')
+                          .input
+                            input(name="email" type="email" class="email_input" placeholder="shax@gmail.com" required)
+                  .text
+                    .texta
+                      .text_in Сообщение к письму
+                      label.label
+                        .label_in
+                          +icon('message', 'message')
+                          .input
+                            textarea(name="text" type="text" class="text_input" placeholder="Требуется ваша помощь в создании сайта!" required).textarea
+                  .button
+                    button.btn Отправить     
+        footer.footer
+          .container
+            .foot
+              .foot_logo
+                .foot_year &copy; 2019
+                .foot_name
+                  span.name Шахмир Ахмедилов
+                  span Личный сайт веб разработчика
+              .foot_nav
+                .foot_menu
+                  ul.menu_list
+                    - var array_menu = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться ']
+                    - for(var i = 0; i < array_menu.length; i++)
+                      li.meni_item
+                        a(href="#").menu_link= array_menu[i]
+                .more_info
+                  .social_info
+                    .info Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                    .social_in
+                      ul.social_icons
+                        - var array_icons = ['insta','vk','github']
+                        - for(var i = 0; i < array_icons.length; i++)
+                          li.social_item
+                            .round
+                              div(class=array_icons[i])
+                                a(href="#").social_link
+                  .quore
+                    span.text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                    span.name Martin Golding           

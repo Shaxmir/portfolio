@@ -1,0 +1,101 @@
+.round_svg {
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    transform: rotate(-90deg);
+}
+.circle {
+    fill: transparent;
+    stroke: #423e3e;
+    stroke-width: 6px;
+}
+.circle_under {
+    stroke-width: 3px;
+
+}
+.circle_above {
+    stroke: #ef8800;
+    stroke-dasharray: 251;
+    stroke-dashoffset: 251;
+    animation: fill 100s linear infinite;
+    animation-play-state: paused;
+}
+
+.circle_above[style="animation-delay: -100s"] {
+    animation: initial;
+    stroke-dashoffset: 0;
+}
+@keyframes fill {
+    from {
+    stroke-dashoffset: 251;
+    }
+    to {
+    stroke-dashoffset: 0;
+    }
+}
+
+
+
+
+.skill_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 150px;
+}
+.rounds {
+    display: flex;
+    margin-top: 50px;
+
+}
+.front-end {
+    display: flex;
+}
+.skill_text {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    h2 {
+        font-weight: bold;
+        color: #fff;
+    }
+    span {
+        font-weight: 600;
+        color: #878787;
+        margin-top: 60px;
+    }
+}
+.skill_data {
+    margin-top: 70px;
+    h2 {
+        padding: 40px 0;
+    }
+}
+// 800
+// 600
+.img_klava {
+    width: 600px;
+    height: 890px;
+    background-image: url('../images/content/klava.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: -15%;
+    left: 0;
+    z-index: 10;
+}
+
+.data {
+    position: relative;
+
+    span {
+        font-size: 18px;
+        color: #878787;
+        position: absolute; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}

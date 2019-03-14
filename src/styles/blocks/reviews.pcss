@@ -1,0 +1,130 @@
+.reviews_call {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    width: 80%;
+    .reviews {
+        display: flex;
+    flex-direction: column;
+    width: 100%;
+    .reviews_info {
+        display: flex;
+    }
+    .reviews_scroll {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 60%;
+            padding: 50px 0;
+            h1 {
+                font-weight: bold;
+            }
+            .scrolls {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 150px;
+                .left_scroll {
+                    width: 50px;
+                    height: 50px;
+                    border: 2px solid #adadac;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    position: relative;
+                
+                   
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        background: svg-load('arrow-down.svg', fill=#adadac, width=100%, height=100%);
+                        width: 10px;
+                        height: 10px;
+                        transform:  translate(-50%,-50%) rotate(-180deg);
+                        top: 50%;
+                        left: 50%;
+                    
+                    }
+                }
+                .right_scroll {
+                    width: 50px;
+                    height: 50px;
+                    border: 2px solid #adadac;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    position: relative;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        background: svg-load('arrow-down.svg', fill=#adadac, width=100%, height=100%);
+                        width: 10px;
+                        height: 10px;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+            }
+        }
+    .review {
+        margin-left: 60px;
+        .review_text_one {
+            padding: 25px;
+            font-size: 16px;
+            color: #adadac;
+            font-weight: 600;
+            position: relative;
+            span{
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 70px;
+                    height: 70px;
+                    background: svg-load('quote.svg', fill=rgba(#1b1f22, 0.8), width=100%, height=100%);
+                    top: 25px;
+                    left: -60px;
+    }
+            }
+    }
+    
+    }
+    .info_review {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+        margin-top: 20px;
+        .review_avatar {
+            width: 76px;
+            height: 76px;
+
+            @each $var in user2, user3 {
+                .rev_#{$var} {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    background-image: url('../images/content/#{$var}.jpg');
+                    background-size: cover;
+                    // background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+
+            
+        }
+        .review_text {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            text-align: left;
+            h3 {
+                font-weight: bold;
+                padding: 5px 0;
+            }
+            span {
+                color: #adadac;
+            font-weight: 600;
+            }
+        }
+    }
+    }
+}

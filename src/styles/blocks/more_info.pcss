@@ -1,0 +1,40 @@
+.more_info {
+    display: flex;
+    margin-top: 60px;
+    color: #7c7e7f;
+    .round {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 2px solid #706a65;
+        position: relative;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+    @each $var in insta, vk, github {
+        .#{$var} {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        background: svg-load('#{$var}.svg', fill=#706a65, width=100%, height=100%);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    }
+    .quore {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        .name {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 300;
+            margin-top: 20px;
+        }
+    }
+}
