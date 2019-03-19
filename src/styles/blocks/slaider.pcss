@@ -36,6 +36,11 @@
                 box-shadow: 0 0 20px 10px rgba(#000000, 0.5);
                 .slaid_list {
                     display: flex;
+                    .slaid_item:last-child {
+                        @include desktop {
+                            display: none;
+                             }
+                    }
                     .slaid_item {
                         .slaid_link {
                             .slaid_pic {
@@ -177,4 +182,7 @@
     color: #e6e5e5;
     font-weight: bold;
     z-index: 0;
+    @include desktop {
+        font-size: 350px;
+    }
 }
