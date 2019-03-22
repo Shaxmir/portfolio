@@ -3,24 +3,42 @@
     flex-direction: column;
     width: 70%;
     margin-top: 150px;
+    @include tablets {
+        width: 100%;
+    }
+
     .title {
         font-size: 36px;
         font-weight: bold;
         color: #fff;
         margin: 50px 0;
+        @include phones {
+            font-size: 24px;
+        }
     }
     .form {
         display: flex;
         flex-direction: column;
         width: 100%;
+        @include phones {
+            text-align: center;
+        }
         .name_email {
             display: flex;
             justify-content: space-between;
             width: 100%;
+            fill: #fff;
+            @include phones {
+                flex-direction: column;
+            }
             .name {
                 display: flex;
                 flex-direction: column;
                 width: 50%;
+                
+                @include phones {
+                    width: 100%;
+                }
                 .text_in {
                     color: #adadac;
                     padding: 10px 15px;
@@ -29,8 +47,11 @@
                 .user_input {
                     width: 25px;
                     height: 25px;
-                    fill: #fff;
                     margin-right: 20px;
+                    @include desktop {
+                        width: 23px;
+                        height: 23px;
+                    }
                 }
                 .name_input {
                     border: none;
@@ -49,6 +70,11 @@
                 display: flex;
                 flex-direction: column;
                 width: 50%;
+                
+                @include phones {
+                    width: 100%;
+                    margin-left: 0;
+                }
                 .text_in {
                     color: #adadac;
                     padding: 10px 15px;
@@ -57,8 +83,11 @@
                 .envelope {
                     width: 25px;
                     height: 25px;
-                    fill: #fff;
                     margin-right: 20px;
+                    @include desktop {
+                        width: 23px;
+                        height: 23px;
+                    }
                 }
                 .email_input {
                     border: none;
@@ -68,15 +97,26 @@
                     outline: none;
                     color: #fff;
                     font-weight: bold;
+                   
+                    
                 }
             }
         }
     }
 }
+
 .label { 
     border-bottom: 2px solid #fff; 
     width: 100%;
     height: 100px;
+    cursor: pointer;
+    &:focus-within {
+        border-bottom: 2px solid #ef8800; 
+         .user_input, .envelope{
+            fill: #ef8800;
+         }
+        }
+    
 }
 .label_in {
     display: flex;
@@ -88,10 +128,17 @@
     flex-direction: column;
     margin-top: 100px;
     width: 100%;
+    fill: #fff;
     .label { 
         border-bottom: 2px solid #fff; 
         width: 100%;
         height: 150px;
+        &:focus-within {
+            border-bottom: 2px solid #ef8800; 
+             .message{
+                fill: #ef8800;
+             }
+            }
     }
     .label_in {
         display: flex;
@@ -105,7 +152,6 @@
     .message {
         width: 25px;
         height: 25px;
-        fill: #fff;
         margin-right: 20px;
     }
     .textarea {
@@ -124,13 +170,30 @@
     display: flex;
     width: 100%;
     margin-top: 100px;
+    @include tablets {
+        justify-content: center;
+        align-items: center;
+    }
+
      .btn {
          width: 350px;
          height: 80px;
          border: none;
-         background: #ee8300;
          text-transform: uppercase;
          font-weight: bold;
          color: #fff;
+         background: rgb(237, 127, 0);
+        background: -webkit-linear-gradient(77deg, rgb(237, 127, 0) 50%, rgb(242, 148, 0) 63%);
+        background: -o-linear-gradient(77deg, rgb(237, 127, 0) 50%, rgb(242, 148, 0) 63%);
+        background: -ms-linear-gradient(77deg, rgb(237, 127, 0) 50%, rgb(242, 148, 0) 63%);
+        background: linear-gradient(77deg, rgb(237, 127, 0) 50%, rgb(242, 148, 0) 63%);
+        transition: background .3s; 
+        &:hover {
+            background: rgb(255, 138, 0);
+        background: -webkit-linear-gradient(77deg, rgb(255, 138, 0) 50%, rgb(255, 157, 0) 63%);
+        background: -o-linear-gradient(77deg, rgb(255, 138, 0) 50%, rgb(255, 157, 0) 63%);
+        background: -ms-linear-gradient(77deg, rgb(255, 138, 0) 50%, rgb(255, 157, 0) 63%);
+        background: linear-gradient(77deg, rgb(255, 138, 0) 50%, rgb(255, 157, 0) 63%);
+        }
      }
 }

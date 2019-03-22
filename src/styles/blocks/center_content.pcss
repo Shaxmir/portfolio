@@ -5,6 +5,13 @@
     width: 100%;
     height: 100%;
     margin-top: 10%;
+    @include tablets {
+        flex-direction: column;
+    }
+    @include phones {
+        margin-top: 50%;
+        
+    }
     .content_text {
         position: relative;
         .text_in {
@@ -14,7 +21,14 @@
         justify-content: center;
         font-weight: bold;
         line-height: 0.9;
-        position: relative;
+        z-index: 1;
+        @include desktop {
+            font-size: 56px;
+        }
+        @include phones {
+            font-size: 34px;
+            text-align: center;
+        }
         }
         .mini {
                 display: flex;
@@ -25,6 +39,17 @@
                 left: -50%;
                 text-align: right;
                 font-weight: bold;
+                @include desktop {
+                    font-size: 16px;
+                }
+                @include tablets {
+                    position: static;
+                    text-align: center;
+                    color: #c2b3a7;
+                }
+                @include phones {
+                    font-size: 12px;
+                }
         }
         
     }

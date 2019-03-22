@@ -7,6 +7,14 @@
     transform: rotate(-80deg);
     z-index: -1;
     filter: blur(10px);
+    @include tablets {
+        top: -10%;
+        right: -15%;
+    }
+    @include phones {
+        display: none;
+    }
+
 }
 .sheet_two {
     width: 80px;
@@ -17,6 +25,9 @@
     transform: rotate(45deg);
     z-index: -1;
     filter: blur(3px);
+    @include phones {
+        display: none;
+    }
 }
 .sheet_three {
     width: 120px;
@@ -27,6 +38,9 @@
     transform: rotate(15deg);
     z-index: -1;
     filter: blur(3px);
+    @include phones {
+        display: none;
+    }
 }
 .sheet_four {
     width: 260px;
@@ -36,4 +50,7 @@
     right: 20%;
     z-index: -1;
     filter: blur(5px);
+    @include phones {
+        display: none;
+    }
 }

@@ -11,38 +11,51 @@ html(lang="en")
     .wrapper
       .maincontent
         section.hero_block
+          .parallax
+            .parallax_layer(data-speed="0.1")
+              img(src=require("./images/content/parallax/p1.png")).parallax_image
+            .parallax_layer(data-speed="0.25")
+              img(src=require("./images/content/parallax/p2.png")).parallax_image
+            .parallax_layer(data-speed="0.40")
+              img(src=require("./images/content/parallax/p3.png")).parallax_image
+            .parallax_layer(data-speed="0.50")
+              img(src=require("./images/content/parallax/p4.png")).parallax_image
+          
+          .menu
+            .logo
+              .logo_title ША
+            .menu_nav
+              ul.menu_list
+                - var array_menu = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться ']
+                - for(var i = 0; i < array_menu.length; i++)
+                  li.meni_item
+                    a(href="#").menu_link= array_menu[i]
+            .social
+              .social_in
+                ul.social_icons
+                  - var array_icons = ['insta','vk','github']
+                  - for(var i = 0; i < array_icons.length; i++)
+                    li.social_item
+                      div(class=array_icons[i])
+                        a(href="#").social_link
+                        //- +icon(array_icons[i], social_ico)
+            .burger_menu 
+              span
+              span
+              span            
           .container
-            .menu
-              .logo
-                .logo_title ША
-              .menu_nav
-                ul.menu_list
-                  - var array_menu = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться ']
-                  - for(var i = 0; i < array_menu.length; i++)
-                    li.meni_item
-                      a(href="#").menu_link= array_menu[i]
-              .social
-                .social_in
-                  ul.social_icons
-                    - var array_icons = ['insta','vk','github']
-                    - for(var i = 0; i < array_icons.length; i++)
-                      li.social_item
-                        div(class=array_icons[i])
-                          a(href="#").social_link
-                          //- +icon(array_icons[i], social_ico)
-
             .center_content
               .content_text
-                .text_in
-                  span Шахмир
-                  span Ахмедилов
                 .mini
                   span Личный сайт
                   span веб разработчика
-            .scroll
-              .scroll_in
-                .scroll_text Скролл
-                .scroll_ico
+                .text_in
+                  span Шахмир
+                  span Ахмедилов
+          .scroll
+            .scroll_in
+              .scroll_text Скролл
+              .scroll_ico
         section.user_information_block
           .container
             .block_user
@@ -67,6 +80,7 @@ html(lang="en")
                   span Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
         section.skills_block
           .img_klava
+            .klava
           .container
             .skill_info
               .skill_text
@@ -136,11 +150,11 @@ html(lang="en")
                           li.slaid_item
                             a.slaid_link(href="#")
                               +image(`content/slaider/${array_slaids[i]}.png`, 'slaid_pic')
-                      .scrolls
-                        .right_in
-                          .right
-                        .left_in
-                          .left
+                    .scrolls
+                      .right_in
+                        .right
+                      .left_in
+                        .left
                 .block_info
                   .info_tags
                     span HTML
@@ -244,4 +258,19 @@ html(lang="en")
                                 a(href="#").social_link
                   .quore
                     span.text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-                    span.name Martin Golding           
+                    span.name Martin Golding    
+      .open_menu
+        .right_open_menu
+          .open_menu_and_social
+            +image('content/x.png', 'iks')
+            ul.open_menu_list
+              - var links = ['Главная','Обо мне','Навык','Работы','Отзывы','Связатся']
+              - for(var i = 0; i < links.length; i++)
+                li.open_menu_item
+                  a.open_menu_link= links[i]  
+            ul.open_social_list
+              - var array_icons = ['insta_open','vk_open','github_open']
+                - for(var i = 0; i < array_icons.length; i++)
+                  li.open_social_item
+                    div(class=array_icons[i])
+                      a(href="#").open_social_link   
