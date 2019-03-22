@@ -9,10 +9,13 @@
     }
     .foot {
         display: flex;
-        .foot_logo {
+            padding-top: 80px;
+            .foot_logo {
             display: flex;
-            margin-top: 80px;
             color: #454749;
+            @include desktop {
+                flex-direction: column;
+            }
             .foot_year {
                 font-size: 48px;
                 font-weight: bold;

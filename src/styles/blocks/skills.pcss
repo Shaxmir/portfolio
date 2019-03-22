@@ -42,15 +42,14 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    margin-top: 150px;
 }
 .rounds {
     display: flex;
-    margin-top: 50px;
 
 }
 .front-end {
     display: flex;
+    flex-direction: column;
 }
 .skill_text {
     width: 80%;
@@ -69,11 +68,9 @@
 .skill_data {
     margin-top: 70px;
     h2 {
-        padding: 40px 0;
+        margin: 40px 0;
     }
 }
-// 800
-// 600
 .img_klava {
     width: 600px;
     height: 890px;
@@ -85,6 +82,11 @@
     bottom: -15%;
     left: 0;
     z-index: 10;
+    @include desktop {
+        width: 540px;
+        height: 800px;
+        left: -100px;
+    }
 }
 
 .data {
