@@ -1,0 +1,29 @@
+[
+    {
+        "skillsGroup": "FronEnd",
+        "skills": {
+            "HTML5": 60,
+            "CSS3": 45,
+            "Javascript": 30,
+            "JQuery & Vue.js": 20
+        }
+    },
+    {
+        "skillsGroup": "WorkFlow",
+        "skills": {
+            "Git": 26,
+            "Terminal": 31,
+            "Gulp": 15,
+            "WebPack": 10
+        }
+    },
+    {
+        "skillsGroup": "BackEnd",
+        "skills": {
+            "Php": 45,
+            "MySQL": 30,
+            "PDO": 5,
+            "PhpMyAdm": 40
+        }
+    }
+]

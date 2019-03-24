@@ -62,8 +62,11 @@
 }
 .menu_link {
     text-decoration: none;
+    transition: border-bottom .3s;
+    transition: color .3s;
     &:hover {
         color: #ef8800;
+        border-bottom: 2px solid #ef8800; 
     }
     @include desktop {
         font-size: 14px;

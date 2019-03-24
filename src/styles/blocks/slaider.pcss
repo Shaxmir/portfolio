@@ -39,6 +39,7 @@
             .big_pic {
               width: 950px;
               height: 550px;
+              transition: background 1s;
         @include desktop {
             width: 650px;
             height: 350px;
@@ -63,20 +64,36 @@
                 }
                 .slaid_list {
                     display: flex;
-                    .slaid_item:last-child {
+                        list-style: none;
+                        width: 720px;
+                        overflow: hidden;
                         @include desktop {
-                            display: none;
-                             }
-                    }
+                            width: 360px;
+                        }
+                        .active {
+                            border: 2px solid #f29400;
+                            transition: border 0.3s;
+                            box-sizing: border-box;
+                        }
+                        
+                    
                     .slaid_item {
+                        list-style: none;
+                        width: 180px;
+                        height: 100px;
+                        flex: 0 0 auto;
+                        &:hover {
+                            
+                            border: 2px solid #f29400;
+                            box-sizing: border-box;
+                            
+                            
+                        }
                         .slaid_link {
                             .slaid_pic {
-                                width: 180px;
-                                height: 100px;
-                                &:hover {
-                                    border: 3px solid #f29400;
-                                    
-                                }
+                                width: 100%;
+                                height: 100%;
+                                
                             }
                         }
                     }
@@ -186,7 +203,7 @@
         @include desktop {
             width: 250px;
         }
-            span {
+            .info_item {
                 padding: 15px 20px;
                 background: #f1f5f9;
                 color: #7a8087;
@@ -243,7 +260,7 @@
 }
 .number {
     position: absolute;
-    right: 25%;
+    right: 10%;
     top: 20%;
     font-size: 400px;
     color: #e6e5e5;
