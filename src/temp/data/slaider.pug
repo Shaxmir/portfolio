@@ -39,9 +39,9 @@ script(type="text/x-template")#slaider-display
 
 script(type="text/x-template")#slaider-btns 
      .scrolls
-        a(href="#" @click.prevent="$emit('slide', 'next')").right_in
+        a(type="button" @click.prevent="$emit('slide', 'next')").right_in
             .right
-        a(href="#" @click.prevent="$emit('slide', 'prev')").left_in
+        a(type="button" @click.prevent="$emit('slide', 'prev')").left_in
             .left
 
 ///////////////////////////////
