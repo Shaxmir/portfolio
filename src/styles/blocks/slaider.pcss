@@ -1,6 +1,6 @@
 .my_work {
     display: flex;
-    padding: 15% 5%;
+
     width: 100%;
     height: 100%;
     position: relative;
@@ -15,18 +15,39 @@
     }
     .slaider {
         display: flex;
+    @include tablets {
+        flex-direction: column;
+    }
+
     }
     .block_slaid {
         width: 70%;
         display: flex;
         flex-direction: column;
         z-index: 1;
+    @include tablets {
+        width: 90%;
+    }
+    @include phones {
+        width: 100%;
+    }
+
+
         
         .slaid_pic {
             position: relative;
             .big_pic {
               width: 950px;
-              height: 550px;   
+              height: 550px;
+              transition: background 1s;
+        @include desktop {
+            width: 650px;
+            height: 350px;
+        }
+    @include phones {
+        width: 100%;
+    }
+
             }
             .slaid {
                 display: flex;
@@ -34,17 +55,45 @@
                 bottom: 6%;
                 right: 0;
                 box-shadow: 0 0 20px 10px rgba(#000000, 0.5);
+                
+                @include desktop {
+                    right: 0;
+                }
+                @include phones {
+                    display: none;
+                }
                 .slaid_list {
                     display: flex;
+                        list-style: none;
+                        width: 720px;
+                        overflow: hidden;
+                        @include desktop {
+                            width: 360px;
+                        }
+                        .active {
+                            border: 2px solid #f29400;
+                            transition: border 0.3s;
+                            box-sizing: border-box;
+                        }
+                        
+                    
                     .slaid_item {
+                        list-style: none;
+                        width: 180px;
+                        height: 100px;
+                        flex: 0 0 auto;
+                        &:hover {
+                            
+                            border: 2px solid #f29400;
+                            box-sizing: border-box;
+                            
+                            
+                        }
                         .slaid_link {
                             .slaid_pic {
-                                width: 180px;
-                                height: 100px;
-                                &:hover {
-                                    border: 3px solid #f29400;
-                                    
-                                }
+                                width: 100%;
+                                height: 100%;
+                                
                             }
                         }
                     }
@@ -58,14 +107,19 @@
             width: 50px;
             height: 100px;
             position: absolute;
-            bottom: 0;
+            bottom: 6%;
             right: -50px;
+    @include phones {
+        bottom: 0;
+        right: 0;
+    }
             
             .right_in{
                 height: 50%;
                 width: 100%;
                 cursor: pointer;
-                position: relative;
+            background: #2d3c4e;
+            position: relative;
                 transition: background 0.4s;
                 &:hover {
                     background: #293e56;
@@ -92,7 +146,8 @@
                 height: 50%;
                 width: 100%;
                 cursor: pointer;
-                position: relative;
+            background: #2d3c4e;
+            position: relative;
                 transition: background 0.4s;
                 &:hover {
                     background: #293e56;
@@ -118,37 +173,73 @@
         }
     }
     .block_info {
-        margin-left: 5%;
+        margin-left: 70px;
         width: 20%;
         display: flex;
         flex-direction: column;
         z-index: 1;
+        @include desktop {
+        margin-left: 10%;
+    }
+    @include tablets {
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 30px;
+    }
+    @include phones {
+        text-align: left;
+        padding: 0 40px;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+
         .info_tags {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 300px;
-            span {
+        @include desktop {
+            width: 250px;
+        }
+            .info_item {
                 padding: 15px 20px;
                 background: #f1f5f9;
                 color: #7a8087;
                 font-weight: 500;
                 border-radius: 25px 25px 25px 25px / 25px 25px 25px 25px;
                 cursor: pointer;
+                &:hover {
+                    color: #fff;
+                    background: #ef8800;
+                }
+                @include desktop {
+                    padding: 10px 15px;
+
+                }
             }
         }
         .info_text {
             display: flex;
             flex-direction: column;
             h2 {
-                margin: 50px 0;
+                margin: 40px 0;
                 font-weight: bold;
                 font-size: 30px;
+                @include desktop {
+                    font-size: 24px
+                }
             }
             span {
                 color: #969aa0;
                 font-weight: 400;
                 line-height: 30px;
+                    @include desktop {
+                        line-height: 20px;
+                    }
             }
         }
         .info_link {
@@ -171,10 +262,19 @@
 }
 .number {
     position: absolute;
-    right: 20%;
-    top: 30%;
+    right: 25%;
+    top: 20%;
     font-size: 400px;
     color: #e6e5e5;
     font-weight: bold;
     z-index: 0;
+    @include desktop {
+        font-size: 350px;
+    }
+    @include tablets {
+        right: -30px;
+        top:  6%;
+        font-size: 250px;
+    }
+
 }

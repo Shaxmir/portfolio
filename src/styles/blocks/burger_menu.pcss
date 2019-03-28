@@ -1,0 +1,15 @@
+.burger_menu {
+    display: none;
+    cursor: pointer;
+    @include tablets {
+        display: flex;
+        flex-direction: column;
+        span {
+            width: 27px;
+            height: 3px;
+            background: #fff;
+            margin-top: 5px;
+            border-radius: 10px;
+        }
+    }
+}

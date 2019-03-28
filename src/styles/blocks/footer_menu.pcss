@@ -1,12 +1,35 @@
 .foot_nav {
     display: flex;
     flex-direction: column;
+
     .foot_menu {
        .menu_list {
            display: flex;
+    @include tablets {
+        line-height: 40px;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: none;
+        white-space: pre-wrap;
+    }
+           
            .meni_item{
+               
+               width: 100px;
+               @include phones {
+                 width: 150px;
+               }
+               &:first-child {
+                margin-left: 0;
+            }
                .menu_link {
                    color: #fff;
+                   &:hover {
+                    color: #ef8800;
+                }
+                   @include desktop {
+                       font-size: 14px;    
+                }
                    
                }
            }

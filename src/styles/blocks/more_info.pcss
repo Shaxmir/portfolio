@@ -2,15 +2,41 @@
     display: flex;
     margin-top: 60px;
     color: #7c7e7f;
+    @include tablets {
+    flex-direction: column;
+    }
+    .social_icons {
+        @include tablets {
+            margin-left: 0;
+            
+                    } 
+                    @include phones {
+                        display: flex;
+                    }
+                    .social_item {
+                        padding: 20px 0 0 10px;
+                        &:first-child {
+                            padding-left: 0; 
+                        }
+                       
+                    }  
+    }
     .round {
         width: 46px;
         height: 46px;
         border-radius: 50%;
         border: 2px solid #706a65;
         position: relative;
-        margin-left: 10px;
-        margin-top: 20px;
+        &:hover {
+            border: 2px solid #fff;
+            @each $var in insta, vk, github {
+                .#{$var} {
+                background: svg-load('#{$var}.svg', fill=#fff, width=100%, height=100%);
+            }
+        
     }
+    }
+}
     @each $var in insta, vk, github {
         .#{$var} {
         width: 20px;
@@ -24,12 +50,17 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
+        
     }
     }
     .quore {
         display: flex;
         flex-direction: column;
         margin-left: 10px;
+        @include tablets { 
+            margin-left: 0;
+            margin-top: 20px;
+        }
         .name {
             color: #fff;
             font-size: 18px;
