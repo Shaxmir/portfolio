@@ -2,20 +2,39 @@
     
         .wrapper
           .admin_block
-            header.header
-              .head_info
-                .user_avatar
-                  img(src="../images/content/user.jpg", alt="").avatar
-                .name_lastName Шахмир Ахмедилов
-                .name_panel Панель администрирования
-              .head_exit
-                a(href="#").exit_link Выйти
-            nav.nav_menu
-              ul.nav_list
-                - var nav = ['Обо мне','Работы','Отзывы']
-                - for(var i = 0; i < nav.length; i++)
-                  li.nav_item
-                    a(href="#").nav_link= nav[i]
+            .aut_play
+              form.form_aut
+                .remove
+                .title Авторизация
+                label.label
+                  .text_login Имя пользователя
+                  .label_login
+                    .ico_user
+                    .input
+                      input(name="name" type="name" class="name_input" placeholder="Имя пользователя" required)
+                label.label
+                  .text_login Пароль
+                  .label_login
+                    .ico_pass
+                    .input
+                      input(name="password" type="password" class="password_input" placeholder="Пароль" required)
+                .button
+                  button.btn_login Отправить
+
+            //- header.header
+            //-   .head_info
+            //-     .user_avatar
+            //-       img(src="../images/content/user.jpg", alt="").avatar
+            //-     .name_lastName Шахмир Ахмедилов
+            //-     .name_panel Панель администрирования
+            //-   .head_exit
+            //-     a(href="#").exit_link Выйти
+            //- nav.nav_menu
+            //-   ul.nav_list
+            //-     - var nav = ['Обо мне','Работы','Отзывы']
+            //-     - for(var i = 0; i < nav.length; i++)
+            //-       li.nav_item
+            //-         a(href="#").nav_link= nav[i]
             //-  section.about_admin
             //-   .title_and_create_group
             //-     h1.title Блок "Обо мне"
@@ -120,54 +139,54 @@
               //-           .ico_edit
               //-         a(href="#").edit Удалить
               //-           .ico_delete
-            section.rewievs
-              .title Блок "Отзывы"
-              .edit_rewievs_block
-                .title_rewievs Новый отзыв
-                form.form_rewievs
-                  .avatar_rew
-                    img(src="../images/content/user.jpg", alt="").rewievs_image                    
-                    a(href="#").load_avatar Добавить фото
-                  .data_rewievs
-                    .name_pro
-                      .name
-                        label.label
-                          .text_in Имя автора
-                          .label_in
-                            .input
-                              input(name="name" type="name" class="name_input" placeholder="" required)
-                      .pro
-                        label.label
-                          .text_in Титул автора
-                          .label_in
-                            .input
-                              input(name="text" type="text" class="text_input" placeholder="" required)
-                    .texta
-                      label.label
-                        .text_in Отзыв
-                        .label_in
-                          .input
-                            textarea(name="text" type="text" class="text_input" placeholder="" required).textarea
-                    .buttons
-                      button.btn_canled Отмена
-                      button.btn_save Сохранить
-              .rewievs_2
-                .creat_new_rewievs
-                  .rewievs_plus +
-                  .text Добавить Отзыв
-                .the_rewievs
-                  .img_rewievs
-                    img(src="../images/content/user.jpg", alt="").rewievs_image
-                    .name_and_pro
-                     .name Владимир Сабанцев
-                     .pro Учитель
-                  .information_rewievs
-                    span.text_rewievs Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quidem alias veritatis dolores. Totam autem voluptates reiciendis consectetur quasi ab nobis voluptatem sit in, rem, atque, dolores amet consequatur nostrum.
-                  .edit_panel
-                    a(href="#").edit Править
-                      .ico_edit
-                    a(href="#").edit Удалить
-                      .ico_delete  
+            //- section.rewievs
+            //-   .title Блок "Отзывы"
+            //-   .edit_rewievs_block
+            //-     .title_rewievs Новый отзыв
+            //-     form.form_rewievs
+            //-       .avatar_rew
+            //-         img(src="../images/content/user.jpg", alt="").rewievs_image                    
+            //-         a(href="#").load_avatar Добавить фото
+            //-       .data_rewievs
+            //-         .name_pro
+            //-           .name
+            //-             label.label
+            //-               .text_in Имя автора
+            //-               .label_in
+            //-                 .input
+            //-                   input(name="name" type="name" class="name_input" placeholder="" required)
+            //-           .pro
+            //-             label.label
+            //-               .text_in Титул автора
+            //-               .label_in
+            //-                 .input
+            //-                   input(name="text" type="text" class="text_input" placeholder="" required)
+            //-         .texta
+            //-           label.label
+            //-             .text_in Отзыв
+            //-             .label_in
+            //-               .input
+            //-                 textarea(name="text" type="text" class="text_input" placeholder="" required).textarea
+            //-         .buttons
+            //-           button.btn_canled Отмена
+            //-           button.btn_save Сохранить
+            //-   .rewievs_2
+            //-     .creat_new_rewievs
+            //-       .rewievs_plus +
+            //-       .text Добавить Отзыв
+            //-     .the_rewievs
+            //-       .img_rewievs
+            //-         img(src="../images/content/user.jpg", alt="").rewievs_image
+            //-         .name_and_pro
+            //-          .name Владимир Сабанцев
+            //-          .pro Учитель
+            //-       .information_rewievs
+            //-         span.text_rewievs Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quidem alias veritatis dolores. Totam autem voluptates reiciendis consectetur quasi ab nobis voluptatem sit in, rem, atque, dolores amet consequatur nostrum.
+            //-       .edit_panel
+            //-         a(href="#").edit Править
+            //-           .ico_edit
+            //-         a(href="#").edit Удалить
+            //-           .ico_delete  
 
 </template>
 
@@ -198,6 +217,8 @@
       background-repeat: no-repeat;
       position: relative;
         z-index: 9;
+        width: 100%;
+        height: 100vh;
         &::before {
         top: 0;
         left: 0;
@@ -305,7 +326,7 @@
       width: 20px;
       height: 20px;
       color: #fff;
-      background: #3f35cb;
+      background-image: linear-gradient(90deg,#ad00ed,#5500f2);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -399,7 +420,7 @@
     width: 44px;
     height: 44px;
     color: #fff;
-    background: #3f35cb;
+    background-image: linear-gradient(90deg,#ad00ed,#5500f2);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -513,7 +534,7 @@
         border: none;
         font-size: 20px;
         font-weight: 400;
-        background: #383bcf;
+        background-image: linear-gradient(90deg,#ad00ed,#5500f2);
         color: #fff;
         text-transform: uppercase;
         outline: none;
@@ -595,7 +616,7 @@
         border: none;
         font-size: 20px;
         font-weight: 400;
-        background: #383bcf;
+        background-image: linear-gradient(90deg,#ad00ed,#5500f2);
         color: #fff;
         text-transform: uppercase;
         outline: none;
@@ -610,7 +631,7 @@
   .creat_new_work {
     width: 350px;
     height: 550px;
-    background: #3f35cb;
+    background-image: linear-gradient(90deg,#ad00ed,#5500f2);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -810,7 +831,7 @@
     flex-direction: column;
     height: 380px;
     width: 340px;
-    background: #3f35cb;
+    background-image: linear-gradient(90deg,#ad00ed,#5500f2);
     justify-content: center;
     align-items: center;
     color: #fff;
@@ -875,5 +896,86 @@
     color: #a0a5b1;
     line-height: 25px;
     height: 400px;
+  }
+  /*LOGIN CSS*/
+  .aut_play{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  .form_aut {
+    padding: 60px 70px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .title {
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #a0a5b1;
+  }
+  .label {
+    border-bottom: 1px solid #b1b1ba; 
+    width: 100%;
+    height: 100px;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+  .text_login {
+    font-size: 15px;
+    color: #b1b1ba;
+    padding: 10px 0;
+    font-weight: bold;
+  }
+  .label_login {
+    display: flex;
+    margin-top: 20px;
+  }
+  .input {
+    height: 100%;
+    input {
+       border: none;
+      background: none;
+      height: 30px;
+      outline: none;
+      color: #000;
+      font-weight: bold;
+    }
+  }
+  .ico_user {
+    width: 24px;
+    height: 24px;
+    background: svg-load('user.svg', fill=#b1b1ba, width=100%, height=100%);
+    margin-right: 10px;
+  }
+  .ico_pass {
+    width: 24px;
+    height: 24px;
+    background: svg-load('key.svg', fill=#b1b1ba, width=100%, height=100%);
+    margin-right: 10px;
+  }
+  .button {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    button {
+      width: 350px;
+      height: 85px;
+     background-image: linear-gradient(90deg,#ad00ed,#5500f2);
+      color: #fff;
+      font-weight: bold;
+      font-size: 30px;
+      border: none;
+      cursor: pointer;
+      border-radius:  50px 0 50px 0;
+    }
   }
 </style>
