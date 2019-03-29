@@ -3,6 +3,10 @@
     width: 140px;
     height: 140px;
     transform: rotate(-90deg);
+    @include tablets {
+        width: 120px;
+        height: 120px;
+    }
 }
 .circle {
     fill: transparent;
@@ -18,22 +22,10 @@
     stroke: #ef8800;
     stroke-dasharray: 251;
     stroke-dashoffset: 251;
-    // animation: fill 100s linear infinite;
-    // animation-play-state: paused;
+  
 }
 
-// .circle_above[style="animation-delay: -100s"] {
-//     animation: initial;
-//     stroke-dashoffset: 0;
-// }
-// @keyframes fill {
-//     from {
-//     stroke-dashoffset: 251;
-//     }
-//     to {
-//     stroke-dashoffset: 0;
-//     }
-// }
+
 
 
 
@@ -48,7 +40,9 @@
         align-items: center;
         text-align: center;
     }
-
+    @include phones {
+        text-align: left;
+    }
 }
 .rounds {
     display: flex;
@@ -60,6 +54,9 @@
 .front-end {
     display: flex;
     flex-direction: column;
+    @include phones {
+        text-align: center;
+    }
 }
 .skill_text {
     width: 80%;
@@ -133,6 +130,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-       
+    @include tablets {
+        font-size: 14px;
+    }       
     }
 }

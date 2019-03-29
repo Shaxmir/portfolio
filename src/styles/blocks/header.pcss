@@ -15,6 +15,9 @@
 .logo_title {
     font-size: 36px;
     font-weight: bold;
+    @include tablets {
+        font-size: 24px;
+    }
 }
 .menu_list {
     display: flex;
@@ -32,7 +35,7 @@
     }
     @include tablets {
         margin-left: 200px;
-        width: 200px;
+        width: 150px;
     }
     @include phones {
         display: none;
@@ -55,8 +58,8 @@
         height: 20px;    
     }
     @include tablets {
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
     }
 }
 }

@@ -55,7 +55,7 @@ html(lang="en")
                   span Шахмир
                   span Ахмедилов
           .scroll
-            .scroll_in
+            button.scroll_in
               .scroll_text Скролл
               .scroll_ico
         section.user_information_block#yak1
@@ -108,8 +108,8 @@ html(lang="en")
                 .reviews_scroll
                   h1  Что обо мне говорят
                   .scrolls
-                    .left_scroll(@click="previous()")
-                    .right_scroll(@click="next()")
+                    button.left_scroll(@click="previous()")
+                    button.right_scroll(@click="next()")
                 flickity(ref="flickity" :options="flickityOptions").reviews_info
                   .review.carousel-cell
                     .review_text_one

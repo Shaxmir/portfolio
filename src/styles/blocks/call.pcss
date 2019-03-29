@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 70%;
     margin-top: 150px;
-    @include tablets {
+    @include desktop {
         width: 100%;
     }
 
@@ -30,6 +30,9 @@
             fill: #fff;
             @include phones {
                 flex-direction: column;
+            }
+            .input {
+                width: 100%;
             }
             .name {
                 display: flex;
@@ -61,7 +64,7 @@
                     outline: none;
                     color: #fff;
                     font-weight: bold;
-                  
+                    width: 100%;
                     
                 }
                 
@@ -95,7 +98,7 @@
                     border: none;
                     background: none;
                     height: 50px;
-                    
+                    width: 100%;
                     outline: none;
                     color: #fff;
                     font-weight: bold;
@@ -159,6 +162,9 @@
         margin-right: 20px;
         transition: fill .3s;
 
+    }
+    .input {
+        width: 100%;
     }
     .textarea {
         border: none;
