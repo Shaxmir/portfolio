@@ -15,7 +15,7 @@
     }
     .slaider {
         display: flex;
-    @include tablets {
+    @include desktopmini {
         flex-direction: column;
     }
 
@@ -25,7 +25,7 @@
         display: flex;
         flex-direction: column;
         z-index: 1;
-    @include tablets {
+    @include desktopmini {
         width: 90%;
     }
     @include phones {
@@ -181,7 +181,7 @@
         @include desktop {
         margin-left: 10%;
     }
-    @include tablets {
+    @include desktopmini {
         width: 100%;
         margin-left: 0;
         justify-content: center;
@@ -271,10 +271,13 @@
     @include desktop {
         font-size: 350px;
     }
-    @include tablets {
+    @include desktopmini {
         right: -30px;
         top:  6%;
         font-size: 250px;
+    }
+    @include desktopMid {
+        right: 20%;
     }
 
 }
