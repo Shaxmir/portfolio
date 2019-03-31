@@ -173,23 +173,24 @@ html(lang="en")
                         span Оснаватель LoftSchool
               .call#yak5
                 .title Связаться со мной
-                form.form
+                form(id="form_data" @submit="checkForm" method="post").form
+                  .errors
+                    span(v-for="error in errors") {{ error }}
                   .name_email
                     .name
-                      
                       label.label
                         .text_in Введите ваше имя
                         .label_in
                           +icon('user', 'user_input')
                           .input
-                            input(name="name" type="name" class="name_input" placeholder="Шахмир Ахмедилов" required)
+                            input(v-model="name" id="name" name="name" type="name" class="name_input" placeholder="Шахмир Ахмедилов" required)
                     .email
                       label.label
                         .text_in Введите ваш email
                         .label_in
                           +icon('envelope', 'envelope')
                           .input
-                            input(name="email" type="email" class="email_input" placeholder="shax@gmail.com" required)
+                            input(v-model="email" id="email" name="email" type="email" class="email_input" placeholder="shax@gmail.com" required)
                   .text
                     .texta
                       label.label
@@ -197,9 +198,9 @@ html(lang="en")
                         .label_in
                           +icon('message', 'message')
                           .input
-                            textarea(name="text" type="text" class="text_input" placeholder="Требуется ваша помощь в создании сайта!" required).textarea
+                            textarea(v-model="textarea" id="textarea" name="text" type="text" class="text_input" placeholder="Требуется ваша помощь в создании сайта!" required).textarea
                   .button
-                    button.btn Отправить     
+                    button(type="submit").btn Отправить     
         footer.footer
           .container
             .foot
@@ -244,4 +245,8 @@ html(lang="en")
                   li.open_social_item
                     div(class=array_icons[i])
                       a(href="#").open_social_link
+    .windows_form_call
+      .win
+        .win_text Сообщение отправлено
+        button.win_button  Закрыть                  
     include ./temp/temp.pug

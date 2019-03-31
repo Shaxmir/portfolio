@@ -2,40 +2,40 @@
     
         .wrapper
           .admin_block
-            .aut_play
-              form.form_aut
-                .remove
-                .title Авторизация
-                label.label
-                  .text_login Имя пользователя
-                  .label_login
-                    .ico_user
-                    .input
-                      input(name="name" type="name" class="name_input" placeholder="Имя пользователя" required)
-                label.label
-                  .text_login Пароль
-                  .label_login
-                    .ico_pass
-                    .input
-                      input(name="password" type="password" class="password_input" placeholder="Пароль" required)
-                .button
-                  button.btn_login Отправить
+            //- .aut_play
+            //-   form.form_aut
+            //-     .remove
+            //-     .title Авторизация
+            //-     label.label
+            //-       .text_login Имя пользователя
+            //-       .label_login
+            //-         .ico_user
+            //-         .input
+            //-           input(name="name" type="name" class="name_input" placeholder="Имя пользователя" required)
+            //-     label.label
+            //-       .text_login Пароль
+            //-       .label_login
+            //-         .ico_pass
+            //-         .input
+            //-           input(name="password" type="password" class="password_input" placeholder="Пароль" required)
+            //-     .button
+            //-       button.btn_login Отправить
 
-            //- header.header
-            //-   .head_info
-            //-     .user_avatar
-            //-       img(src="../images/content/user.jpg", alt="").avatar
-            //-     .name_lastName Шахмир Ахмедилов
-            //-     .name_panel Панель администрирования
-            //-   .head_exit
-            //-     a(href="#").exit_link Выйти
-            //- nav.nav_menu
-            //-   ul.nav_list
-            //-     - var nav = ['Обо мне','Работы','Отзывы']
-            //-     - for(var i = 0; i < nav.length; i++)
-            //-       li.nav_item
-            //-         a(href="#").nav_link= nav[i]
-            //-  section.about_admin
+            header.header
+              .head_info
+                .user_avatar
+                  img(src="../images/content/user.jpg", alt="").avatar
+                .name_lastName Шахмир Ахмедилов
+                .name_panel Панель администрирования
+              .head_exit
+                a(href="#").exit_link Выйти
+            nav.nav_menu
+              ul.nav_list
+                - var nav = ['Обо мне','Работы','Отзывы']
+                - for(var i = 0; i < nav.length; i++)
+                  li.nav_item
+                    a(href="#").nav_link= nav[i]
+            //- section.about_admin
             //-   .title_and_create_group
             //-     h1.title Блок "Обо мне"
             //-     .create_group
@@ -81,64 +81,66 @@
 
 
                    
-              //- section.myworks
-              //-   .title Блок "Работы"
-              //-   .creat_work
-              //-     .edit_work Редактирование работы
-              //-     form.work_edit
-              //-       .block_img_work
-              //-         .block_img
-              //-           .btn_text
-              //-             span Перетащите или загрузите картинку
-              //-             button.btn_load_img Загрузить
-              //-       .block_input_edit
-              //-         .name
-              //-           label.label_input_edit
-              //-             .text_in Название
-              //-             .label_in
-              //-               .input
-              //-                 input(name="name" type="name" class="title_input" placeholder="" required)
-              //-         .link
-              //-           label.label_input_edit
-              //-             .text_in Ссылка
-              //-             .label_in
-              //-               .input
-              //-                 input(name="text" type="text" class="title_input" placeholder="" required)
-              //-         .texta
-              //-           label.label_input_edit
-              //-             .text_in Описание
-              //-             .label_in
-              //-               .input
-              //-                 textarea(name="text" type="text" class="text_input" placeholder="" required).textarea
-              //-         .creat_tag
-              //-           label.label_input_edit
-              //-             .text_in Добавление тегов
-              //-             .label_in
-              //-               .input
-              //-                 input(name="text" type="text" class="title_input" placeholder="" required)
-              //-         .buttons
-              //-           button.btn_canled Отмена
-              //-           button.btn_save Сохранить
-              //-   .works
-              //-     .creat_new_work
-              //-       .work_plus +
-              //-       .text Добавить работу
-              //-     .the_work
-              //-       .img_work
-              //-         img(src="../images/content/slaider/one.png", alt="").work_image
-              //-         ul.tags_img
-              //-           li.tags_item HTML5
-              //-           li.tags_item CSS3
-              //-           li.tags_item JavaScript
-              //-       .information_work
-              //-         h2.title_work Заголовок
-              //-         span.text_work Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quidem alias veritatis dolores. Totam autem voluptates reiciendis consectetur quasi ab nobis voluptatem sit in, rem, atque, dolores amet consequatur nostrum.
-              //-         a(href="#").link_work http://loftschool.ru
-              //-       .edit_panel
-              //-         a(href="#").edit Править
-              //-           .ico_edit
-              //-         a(href="#").edit Удалить
-              //-           .ico_delete
+              section.myworks
+                .title Блок "Работы"
+                .creat_work
+                  .edit_work Редактирование работы
+                  form.work_edit
+                    .block_img_work
+                      .block_img
+                        .btn_text
+                          span Перетащите или загрузите картинку
+                          button.btn_load_img Загрузить
+                    .block_input_edit
+                      .name
+                        label.label_input_edit
+                          .text_in Название
+                          .label_in
+                            .input
+                              input(name="name" type="name" class="title_input" placeholder="" required)
+                      .link
+                        label.label_input_edit
+                          .text_in Ссылка
+                          .label_in
+                            .input
+                              input(name="text" type="text" class="title_input" placeholder="" required)
+                      .texta
+                        label.label_input_edit
+                          .text_in Описание
+                          .label_in
+                            .input
+                              textarea(name="text" type="text" class="text_input" placeholder="" required).textarea
+                      .creat_tag
+                        label.label_input_edit
+                          .text_in Добавление тегов
+                          .label_in
+                            .input
+                              input(name="text" type="text" class="title_input" placeholder="" required)
+                      .buttons
+                        button.btn_canled Отмена
+                        button.btn_save Сохранить
+                .works
+                  .creat_new_work
+                    .work_plus +
+                    .text Добавить работу
+                  .the_work
+                    .img_work
+                      img(src="../images/content/slaider/one.png", alt="").work_image
+                      ul.tags_img
+                        li.tags_item HTML5
+                        li.tags_item CSS3
+                        li.tags_item JavaScript
+                    .information_work
+                      h2.title_work Заголовок
+                      span.text_work Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quidem alias veritatis dolores. Totam autem voluptates reiciendis consectetur quasi ab nobis voluptatem sit in, rem, atque, dolores amet consequatur nostrum.
+                      a(href="#").link_work http://loftschool.ru
+                    .edit_panel
+                      a(href="#").edit Править
+                        .ico_edit
+                      a(href="#").edit Удалить
+                        .ico_delete
+
+                        
             //- section.rewievs
             //-   .title Блок "Отзывы"
             //-   .edit_rewievs_block
@@ -218,7 +220,8 @@
       position: relative;
         z-index: 9;
         width: 100%;
-        height: 100vh;
+        min-height: 700px;
+        height: 100%;
         &::before {
         top: 0;
         left: 0;
@@ -575,7 +578,7 @@
     }
   }
   .texta {
-    .label_input_edit {
+    .label {
       height: 150px;
       border: none;
       margin-top: 10px;
@@ -589,7 +592,7 @@
       outline: none;
       border: none;
       width: 100%;
-      height: 150px;
+      height: 80px;
       resize: none;
     }
   }
