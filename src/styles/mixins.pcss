@@ -3,9 +3,25 @@
     @content;
   }
 }
+@mixin desktopMid() {
+  @media screen and (max-width: $bp-desktopMid) {
+    @content;
+  }
+}
 
 @mixin desktop() {
   @media screen and (max-width: $bp-desktop) {
+    @content;
+  }
+}
+@mixin desktopmini() {
+  @media screen and (max-width: $bp-desktopMini) {
+    @content;
+  }
+}
+
+@mixin tabletsbig() {
+  @media screen and (max-width: $bp-tabletsBig) {
     @content;
   }
 }
