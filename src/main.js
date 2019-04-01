@@ -10,3 +10,4 @@ import "./scripts/slaider";
 import "./scripts/rewievs";
 import "./scripts/yak";
 import "./scripts/windows";
+// import "./scripts/aut";
