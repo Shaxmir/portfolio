@@ -4,38 +4,75 @@
     width: 100%;
     min-height: 380px;
     background: #1b1f22;
+    @include tablets {
+        min-height: 500px;
+    }
     .container {
         width: 85%;
+        @include desktop {
+            width: 90%;
+        }
     }
     .foot {
         display: flex;
             padding-top: 80px;
+            @include phones {
+                flex-direction: column;
+                padding-top: 40px;
+                height: 700px;
+            }
             .foot_logo {
             display: flex;
             color: #454749;
             @include desktop {
                 flex-direction: column;
             }
+            @include phones {
+                text-align: left;
+            }
             .foot_year {
                 font-size: 48px;
                 font-weight: bold;
                 width: 200px;
+                @include desktop {
+                    font-size: 34px;
+                    width: 150px;
+                }
+                @include phones {
+                    width: 100%;
+                    font-size: 48px;
+                }
             }
             .foot_name {
                 display: flex;
                 flex-direction: column;
                 width: 200px;
+                @include desktop {
+                    width: 150px;
+                }
+                @include phones {
+                    width: 100%;
+                }
                 .name {
                     font-weight: bold;
                     font-size: 18px;
                     color: #fff;
                     width: 100px;
                     padding: 10px 0 20px 0;
+                    @include desktop {
+                        font-size: 16px;
+                    }
+                    @include phones {
+                        width: 100%;
+                    }
                 }
                 span {
                     
                     line-height: 30px;
                     font-weight: 600;
+                    @include desktop {
+                        font-size: 14px;
+                    }
                 }
             }
         }

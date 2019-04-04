@@ -3,22 +3,44 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    margin-top: 65px;
+    z-index: 99;
+    position: absolute;
+    padding: 30px;
+    .menu_nav {
+
+        @include tabletsbig {
+            display: none;
+        }
+    }
 }
 .logo_title {
     font-size: 36px;
     font-weight: bold;
+    @include tablets {
+        font-size: 24px;
+    }
 }
 .menu_list {
     display: flex;
     justify-content: space-between;
     width: 600px;
     align-items: center;
+    
 }
 .social_icons {
     display: flex;
     justify-content: space-between;
     width: 150px;
+    @include desktop {
+        width: 100px;
+    }
+    @include tablets {
+        margin-left: 200px;
+        width: 150px;
+    }
+    @include phones {
+        display: none;
+    }
 }
 @each $var in insta, vk, github {
     .#{$var} {
@@ -29,8 +51,29 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    &:hover {
+        background: svg-load('#{$var}.svg', fill=#fff, width=100%, height=100%);
+    }
+    @include desktop {
+        width: 20px;
+        height: 20px;    
+    }
+    @include tablets {
+        width: 20px;
+        height: 20px;
+    }
 }
 }
 .menu_link {
     text-decoration: none;
+    transition: border-bottom .3s;
+    transition: color .3s;
+    &:hover {
+        color: #ef8800;
+        border-bottom: 2px solid #ef8800; 
+    }
+    @include desktop {
+        font-size: 14px;
+    }
 }
+

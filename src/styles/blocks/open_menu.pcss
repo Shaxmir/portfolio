@@ -1,0 +1,77 @@
+.open_menu_color {
+    background: rgba(#000, 0.9);
+}
+.open_menu {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    
+
+    .right_open_menu {
+        right: -999999px;
+        top: 0;
+        width: 50%;
+        height: 100vh;
+        background: #fff;
+        position: fixed;
+        transition: right 0.3s;
+        @include phones {
+            width: 100%;
+        }
+        .open_menu_and_social {
+            display: flex;
+            flex-direction: column;
+            padding: 150px 70px;
+            position: relative;
+            .iks {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                top: 60px;
+                right: 40px;
+                cursor: pointer;
+
+            }
+            .open_menu_list {
+                display: flex;
+                flex-direction: column;
+                    
+                    .open_menu_item {
+                    margin-top: 20px;
+                    font-weight: 600;
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                    .open_menu_link {
+                        color: #414c63;
+                        &:hover {
+                            color: #ef8800;
+                        }
+                    }
+                }
+            }
+            .open_social_list {
+                display: flex;
+                margin-top: 30px;
+                justify-content: space-between;
+                .open_social_item {
+                    @each $var in insta, vk, github {
+                        .#{$var}_open {
+                        width: 25px;
+                        height: 25px;
+                        cursor: pointer;
+                        background: svg-load('#{$var}.svg', fill=#414c63, width=100%, height=100%);
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        &:hover {
+                            background: svg-load('#{$var}.svg', fill=#ef8800, width=100%, height=100%);
+                        }
+                    }
+            }
+        }
+    }
+}
+    }}

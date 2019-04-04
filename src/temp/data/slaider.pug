@@ -1,0 +1,82 @@
+script(type="text/x-template")#slaider-container
+    .slaider
+        display(
+            :works="works",
+            :currentWork="currentWork",
+            @slide="handlSlide",
+         @picher="pic"
+
+        )
+        info(
+            :currentWork="currentWork"
+        )
+
+
+////////////////////////////////
+
+
+
+script(type="text/x-template")#slaider-display
+    .block_slaid
+        .number {{currentWork.id}}  
+        .slaid_pic
+            img(:src="currentWork.photo").big_pic
+            btns(
+                @slide="direction => $emit('slide', direction)"
+            )
+            thumbs(
+                :works="works",
+                :currentWork="currentWork",
+                @slide="pic => $emit('picher', pic)"
+            )
+
+
+
+
+///////////////////
+
+
+
+script(type="text/x-template")#slaider-btns 
+     .scrolls
+        a(type="button" @click.prevent="$emit('slide', 'next')").right_in
+            .right
+        a(type="button" @click.prevent="$emit('slide', 'prev')").left_in
+            .left
+
+///////////////////////////////
+
+
+
+script(type="text/x-template")#slaider-thumbs
+    .slaid
+        ul.slaid_list
+            li.slaid_item(
+                v-for="work in works" :key="work.id"
+                :class="{active: currentWork.id == work.id}"               )
+                a.slaid_link(href="#" @click.prevent="$emit('picher', 'pic')")
+                    img(:src="work.photo").slaid_pic
+
+///////////////////////////////////
+
+
+script(type="text/x-template")#slaider-tags
+    ul.info_tags
+        li.info_item(v-for="tag in tagsArray") {{tag}}
+
+
+/////////////////////////////////////////////
+
+
+
+script(type="text/x-template")#slaider-info
+    .block_info
+        tags(
+            :tagsArray="tagsArray"
+        )
+        .info_text
+            h2 {{currentWork.title}}
+            span {{currentWork.desc}}
+        .info_link
+            .svg_link
+            a.link(:href="currentWork.link") Посмотреть сайт

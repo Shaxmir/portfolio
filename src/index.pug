@@ -7,43 +7,58 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Portfolio | main page
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
   body
     .wrapper
       .maincontent
-        section.hero_block
+        section.hero_block#yak0
+          .parallax
+            .parallax_layer(data-speed="0.1")
+              img(src=require("./images/content/parallax/p1.png")).parallax_image
+            .parallax_layer(data-speed="0.25")
+              img(src=require("./images/content/parallax/p2.png")).parallax_image
+            .parallax_layer(data-speed="0.40")
+              img(src=require("./images/content/parallax/p3.png")).parallax_image
+            .parallax_layer(data-speed="0.50")
+              img(src=require("./images/content/parallax/p4.png")).parallax_image
+          
+          .menu
+            .logo
+              .logo_title ША
+            .menu_nav
+              ul.menu_list
+                - var array_menu = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться ']
+                - for(var i = 0; i < array_menu.length; i++)
+                  li.meni_item
+                    a(href=`#yak${i}`).menu_link= array_menu[i]
+            .social
+              .social_in
+                ul.social_icons
+                  - var array_icons = ['insta','vk','github']
+                  - for(var i = 0; i < array_icons.length; i++)
+                    li.social_item
+                      div(class=array_icons[i])
+                        a(href="#").social_link
+                        //- +icon(array_icons[i], social_ico)
+            .burger_menu 
+              span
+              span
+              span            
           .container
-            .menu
-              .logo
-                .logo_title ША
-              .menu_nav
-                ul.menu_list
-                  - var array_menu = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться ']
-                  - for(var i = 0; i < array_menu.length; i++)
-                    li.meni_item
-                      a(href="#").menu_link= array_menu[i]
-              .social
-                .social_in
-                  ul.social_icons
-                    - var array_icons = ['insta','vk','github']
-                    - for(var i = 0; i < array_icons.length; i++)
-                      li.social_item
-                        div(class=array_icons[i])
-                          a(href="#").social_link
-                          //- +icon(array_icons[i], social_ico)
-
             .center_content
               .content_text
-                .text_in
-                  span Шахмир
-                  span Ахмедилов
                 .mini
                   span Личный сайт
                   span веб разработчика
-            .scroll
-              .scroll_in
-                .scroll_text Скролл
-                .scroll_ico
-        section.user_information_block
+                .text_in
+                  span Шахмир
+                  span Ахмедилов
+          .scroll
+            button.scroll_in
+              .scroll_text Скролл
+              .scroll_ico
+        section.user_information_block#yak1
           .container
             .block_user
               .block_left
@@ -65,109 +80,38 @@ html(lang="en")
                 .right_text
                   span.star *
                   span Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        section.skills_block
+        section.skills_block#yak2
           .img_klava
+            .klava
           .container
             .skill_info
               .skill_text
                 h2 Чем я могу быть полезен вам
                 span Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
               .skill_data
-                .front-end
-                  h2 Front-end
-                  .rounds
-                    .data 
-                      span HTML5
-                      svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg 
-                        circle.circle(cx="50" cy="50" r="40").circle_under
-                        circle.circle(cx="50" cy="50" r="40" style="animation-delay: -55s").circle_above
-                    .data  
-                      span CSS3                
-                      svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg
-                        circle.circle(cx="50" cy="50" r="40").circle_under
-                        circle.circle(cx="50" cy="50" r="40" style="animation-delay: -45s").circle_above
-                    .data
-                      span JavaScript
-                      svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg
-                        circle.circle(cx="50" cy="50" r="40").circle_under
-                        circle.circle(cx="50" cy="50" r="40" style="animation-delay: -25s").circle_above
-                    .data
-                      span JQuery и Vue.js
-                      svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg
-                        circle.circle(cx="50" cy="50" r="40").circle_under
-                        circle.circle(cx="50" cy="50" r="40" style="animation-delay: -15s").circle_above
-                .workflow
-                  h2 WorkFlow
-                  .rounds
-                    .data
-                      span GIT
-                      svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg
-                        circle.circle(cx="50" cy="50" r="40").circle_under
-                        circle.circle(cx="50" cy="50" r="40" style="animation-delay: -40s").circle_above
-                    .data
-                      span Terminal
-                      svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg
-                        circle.circle(cx="50" cy="50" r="40").circle_under
-                        circle.circle(cx="50" cy="50" r="40" style="animation-delay: -45s").circle_above
-                    .data
-                      span Gulp
-                      svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg
-                        circle.circle(cx="50" cy="50" r="40").circle_under
-                        circle.circle(cx="50" cy="50" r="40" style="animation-delay: -10s").circle_above
-                    .data
-                      span Webpack
-                      svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg
-                        circle.circle(cx="50" cy="50" r="40").circle_under
-                        circle.circle(cx="50" cy="50" r="40" style="animation-delay: -10s").circle_above  
-        section.myworks_block
+                #skills-comp
+        section.myworks_block#yak3
           .container
             .my_work
               .title
                 h2 Мои Работы
-              .slaider
-                .block_slaid
-                  .number 2   
-                  .slaid_pic
-                    +image('content/slaider/big_pic.png', 'big_pic')
-                    .slaid
-                      ul.slaid_list
-                        - var array_slaids = ['one','two','three','four']
-                        - for(var i = 0; i < array_slaids.length; i++)
-                          li.slaid_item
-                            a.slaid_link(href="#")
-                              +image(`content/slaider/${array_slaids[i]}.png`, 'slaid_pic')
-                      .scrolls
-                        .right_in
-                          .right
-                        .left_in
-                          .left
-                .block_info
-                  .info_tags
-                    span HTML
-                    span CSS
-                    span JavaScript
-                  .info_text
-                    h2 Сайт школы образования
-                    span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                  .info_link
-                    .svg_link
-                    a.link(href="#") Посмотреть сайт
-                   
-        section.reviews_and_connection_block
+              .slaider_big_block
+                #slaider-comp                   
+        section.reviews_and_connection_block#rewievs
           +image('content/sheet_one.png', 'sheet_one')
           +image('content/sheet_two.png', 'sheet_two')
           +image('content/sheet_three.png', 'sheet_three')
           +image('content/sheet_four.png', 'sheet_four')
-          .container
+          .container#yak4
             .reviews_call
               .reviews
                 .reviews_scroll
                   h1  Что обо мне говорят
                   .scrolls
-                    .left_scroll
-                    .right_scroll
-                ul.reviews_info
-                  li.review
+                    button.left_scroll(@click="previous()")
+                    button.right_scroll(@click="next()")
+                flickity(ref="flickity" :options="flickityOptions").reviews_info
+                  .review.carousel-cell
                     .review_text_one
                       span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                     .info_review
@@ -177,7 +121,7 @@ html(lang="en")
                       .review_text
                         h3 Ковальчук Дмитрий
                         span Оснаватель LoftSchool
-                  li.review
+                  .review.carousel-cell
                     .review_text_one
                       span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                     .info_review
@@ -187,7 +131,47 @@ html(lang="en")
                       .review_text
                         h3 Владимир Сабанцев
                         span Оснаватель LoftSchool
-              .call
+                  .review.carousel-cell
+                    .review_text_one
+                      span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .info_review
+                      .review_avatar
+                        
+                        .rev_user3
+                      .review_text
+                        h3 Владимир Сабанцев
+                        span Оснаватель LoftSchool
+                  .review.carousel-cell
+                    .review_text_one
+                      span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .info_review
+                      .review_avatar
+                        
+                        .rev_user3
+                      .review_text
+                        h3 Владимир Сабанцев
+                        span Оснаватель LoftSchool
+                  .review.carousel-cell
+                    .review_text_one
+                      span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .info_review
+                      .review_avatar
+                        
+                        .rev_user3
+                      .review_text
+                        h3 Владимир Сабанцев
+                        span Оснаватель LoftSchool
+                  .review.carousel-cell
+                    .review_text_one
+                      span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .info_review
+                      .review_avatar
+                        
+                        .rev_user3
+                      .review_text
+                        h3 Владимир Сабанцев
+                        span Оснаватель LoftSchool
+              .call#yak5
                 .title Связаться со мной
                 form.form
                   .name_email
@@ -230,7 +214,7 @@ html(lang="en")
                     - var array_menu = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться ']
                     - for(var i = 0; i < array_menu.length; i++)
                       li.meni_item
-                        a(href="#").menu_link= array_menu[i]
+                        a(href=`#yak${i}`).menu_link= array_menu[i]
                 .more_info
                   .social_info
                     .info Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
@@ -244,4 +228,20 @@ html(lang="en")
                                 a(href="#").social_link
                   .quore
                     span.text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-                    span.name Martin Golding           
+                    span.name Martin Golding    
+      .open_menu
+        .right_open_menu
+          .open_menu_and_social
+            +image('content/x.png', 'iks')
+            ul.open_menu_list
+              - var links = ['Главная','Обо мне','Навык','Работы','Отзывы','Связатся']
+              - for(var i = 0; i < links.length; i++)
+                li.open_menu_item
+                  a(href=`#yak${i}`).open_menu_link= links[i]  
+            ul.open_social_list
+              - var array_icons = ['insta_open','vk_open','github_open']
+                - for(var i = 0; i < array_icons.length; i++)
+                  li.open_social_item
+                    div(class=array_icons[i])
+                      a(href="#").open_social_link
+    include ./temp/temp.pug
