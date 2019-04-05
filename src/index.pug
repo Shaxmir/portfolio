@@ -11,6 +11,7 @@ html(lang="en")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
   body
     .wrapper
+     
       .maincontent
         section.hero_block#yak0
           .parallax
@@ -173,9 +174,7 @@ html(lang="en")
                         span Оснаватель LoftSchool
               .call#yak5
                 .title Связаться со мной
-                form(id="form_data" @submit="checkForm" method="post").form
-                  .errors
-                    span(v-for="error in errors") {{ error }}
+                form.form
                   .name_email
                     .name
                       label.label
@@ -183,14 +182,16 @@ html(lang="en")
                         .label_in
                           +icon('user', 'user_input')
                           .input
-                            input(v-model="name" id="name" name="name" type="name" class="name_input" placeholder="Шахмир Ахмедилов" required)
+                            input(name="name" type="name" class="name_input" placeholder="Шахмир Ахмедилов" required)
+                            .error
                     .email
                       label.label
                         .text_in Введите ваш email
                         .label_in
                           +icon('envelope', 'envelope')
                           .input
-                            input(v-model="email" id="email" name="email" type="email" class="email_input" placeholder="shax@gmail.com" required)
+                            input(name="email" type="email" class="email_input" placeholder="shax@gmail.com" required)
+                            .error
                   .text
                     .texta
                       label.label
@@ -198,9 +199,12 @@ html(lang="en")
                         .label_in
                           +icon('message', 'message')
                           .input
-                            textarea(v-model="textarea" id="textarea" name="text" type="text" class="text_input" placeholder="Требуется ваша помощь в создании сайта!" required).textarea
+                            textarea(name="text" type="text" class="text_input" placeholder="Требуется ваша помощь в создании сайта!" required).textarea
+                            .error
                   .button
-                    button(type="submit" ль).btn Отправить     
+                    button.btn Отправить
+                  //- template(lang="pug")
+                    //-   progress-button(name="fillColor" class="btn btn-primary mr-1 mb-1" fill-color="#fff") Прогресс
         footer.footer
           .container
             .foot
@@ -245,6 +249,9 @@ html(lang="en")
                   li.open_social_item
                     div(class=array_icons[i])
                       a(href="#").open_social_link
+    .scrooll_bar
+      template(lang="pug")
+        vue-scroll-progress-bar(@complete="handleComplete"  style="z-index: 9999;")
     .windows_form_call
       .win
         .win_text Сообщение отправлено

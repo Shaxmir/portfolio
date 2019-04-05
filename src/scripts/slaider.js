@@ -10,12 +10,27 @@ const thumbs = {
     props: {
         works: Array,
         currentWork: Object
+    },
+    computed: {
+        thiSlaid(index) {
+            this.currentIndex = index;
+            console.log(this.work.id);
+                      }
     }
 }
 
 
 const display = {
     template: "#slaider-display",
+    data: {
+    
+            styleObject: {
+                right: '180px'
+              }
+
+    
+    },
+    
     components: {
         btns, thumbs
     },
@@ -67,6 +82,7 @@ new Vue(
                 currentIndex: 0
             }
         },
+        
         computed: {
             currentWork(){
                 return this.works[this.currentIndex];
@@ -78,6 +94,7 @@ new Vue(
             }
         },
         methods: {
+           
             makeInfiniti(value) {
                 const worksAmout = this.works.length - 1;
                 if (value > worksAmout) this.currentIndex = 0;
@@ -91,25 +108,24 @@ new Vue(
                     return item;
                 })
             },
+            handlClickThumb(index){
+                this.currentIndex = index;
+                console.log(this.currentIndex);
+            },
             handlSlide(direction){
                 switch (direction) {
                     case 'next':
                         this.currentIndex++;
+                        
+                            this.works.unshift(...this.works.splice(1,3));
+                        
                         break;
                     case 'prev':
                         this.currentIndex--;
                         break;
                 }
                 console.log(this.currentWork.id);
-            },
-            pic(pic){
-                switch (pic) {
-                    case 'pic':
-                        this.currentIndex++;
-                        break;
-                }
-                console.log(this.currentWork.id);
-            }   
+            } 
         },
         created(){
             const data  = require('../data/slaider.json');

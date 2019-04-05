@@ -4,8 +4,7 @@ script(type="text/x-template")#slaider-container
             :works="works",
             :currentWork="currentWork",
             @slide="handlSlide",
-         @picher="pic"
-
+            @clickThumb="handlClickThumb"
         )
         info(
             :currentWork="currentWork"
@@ -27,7 +26,7 @@ script(type="text/x-template")#slaider-display
             thumbs(
                 :works="works",
                 :currentWork="currentWork",
-                @slide="pic => $emit('picher', pic)"
+                @clickThumb="index => $emit('clickThumb', index)"
             )
 
 
@@ -52,10 +51,13 @@ script(type="text/x-template")#slaider-thumbs
     .slaid
         ul.slaid_list
             li.slaid_item(
-                v-for="work in works" :key="work.id"
-                :class="{active: currentWork.id == work.id}"               )
-                a.slaid_link(href="#" @click.prevent="$emit('picher', 'pic')")
-                    img(:src="work.photo").slaid_pic
+                v-for="(work, index) in works" :key="work.id"
+                :class="{active: currentWork.id == work.id}"
+                )
+                    a(href="#"
+                    @click.prevent="$emit('clickThumb',index)"
+                    ).slaid_link
+                        img(:src="work.photo").slaid_pic
 
 ///////////////////////////////////
 

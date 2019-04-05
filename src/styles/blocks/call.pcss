@@ -116,6 +116,7 @@
     height: 100px;
     cursor: pointer;
     transition: border-bottom .3s;
+    position: relative;
     &:focus-within {
         border-bottom: 2px solid #ef8800; 
          .user_input, .envelope{
@@ -140,7 +141,8 @@
         width: 100%;
         height: 150px;
     transition: border-bottom .3s;
-        &:focus-within {
+    position: relative;
+    &:focus-within {
             border-bottom: 2px solid #ef8800; 
              .message{
                 fill: #ef8800;
@@ -201,12 +203,21 @@
         background-color: linear-gradient(77deg, rgb(237, 127, 11) 0%, rgb(237, 160, 11) 100%);
         transition-property: background-color;
         transition-duration: 0.5s;
-        &:hover {
-            background-color: rgb(237, 160, 11);
-            background-color: -webkit-linear-gradient(77deg, rgb(237, 160, 11) 0%, rgb(237, 127, 11) 100%);
-            background-color: -o-linear-gradient(77deg, rgb(237, 160, 11) 0%, rgb(237, 127, 11) 100%);
-            background-color: -ms-linear-gradient(77deg, rgb(237, 160, 11) 0%, rgb(237, 127, 11) 100%);
-            background-color: linear-gradient(77deg, rgb(237, 160, 11) 0%, rgb(237, 127, 11) 100%);
-        }
+        // &:hover {
+        //     background-color: rgb(237, 160, 11);
+        //     background-color: -webkit-linear-gradient(77deg, rgb(237, 160, 11) 0%, rgb(237, 127, 11) 100%);
+        //     background-color: -o-linear-gradient(77deg, rgb(237, 160, 11) 0%, rgb(237, 127, 11) 100%);
+        //     background-color: -ms-linear-gradient(77deg, rgb(237, 160, 11) 0%, rgb(237, 127, 11) 100%);
+        //     background-color: linear-gradient(77deg, rgb(237, 160, 11) 0%, rgb(237, 127, 11) 100%);
+        // }
      }
+}
+.error {
+    position: absolute;
+    top: 9px;
+    left: 200px;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgb(237, 127, 11);
+    color: red;
+    font-weight: bold;
 }
