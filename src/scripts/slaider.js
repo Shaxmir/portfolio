@@ -115,13 +115,11 @@ new Vue(
             handlSlide(direction){
                 switch (direction) {
                     case 'next':
-                        this.currentIndex++;
-                        
-                            this.works.unshift(...this.works.splice(1,3));
+                        this.works.unshift(...this.works.splice(1,3));
                         
                         break;
                     case 'prev':
-                        this.currentIndex--;
+                    this.works.unshift(...this.works.splice(3,1));
                         break;
                 }
                 console.log(this.currentWork.id);
