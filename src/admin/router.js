@@ -1,21 +1,30 @@
-import VueRouter from 'vue-router';
-
-Vue.use(VueRouter);
-
-import about from './comp/about.vue';
-const router = [
+export default [
     {
-        path: '/',
-        component: about
+      path: "/",
+      component: () => import("comp/about.vue"),
+      meta: {
+        title: "Блок «Обо мне»"
+      }
     },
     {
-        path: '/myworks',
-        component: myworks
+      path: "/myworks",
+      component: () => import("comp/myworks.vue"),
+      meta: {
+        title: "Блок «Работы»"
+      }
     },
     {
-        path: '/rewievs',
-        component: rewievs
+      path: "/rewievs",
+      component: () => import("comp/rewievs.vue"),
+      meta: {
+        title: "Блок «Отзывы»"
+      }
+    },
+    {
+      path: "/login",
+      component: () => import("components/pages/login.vue"),
+      meta: {
+        public: true
+      }
     }
-];
-
-export default new VueRouter({ router, mode: 'history' });
+  ];
