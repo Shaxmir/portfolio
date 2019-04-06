@@ -1,3 +1,7 @@
+@import "normalize.css";
+@import "../../styles/mixins.pcss";
+// @import "../../styles/layout/base.pcss";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +20,9 @@
     width: 100%;
     overflow: hidden;
     position: relative;
+    .active {
+          display: flex;
+        }
   }
   .admin_block {
     background-image: url('/images/content/fons/one_fon.png');
@@ -36,8 +43,10 @@
         content: "";
         position: absolute;
         z-index: -1;
+        
       }
   }
+  
   .header {
     display: flex;
     justify-content: space-between;
