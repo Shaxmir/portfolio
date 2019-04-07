@@ -1,24 +1,53 @@
 <template lang="pug">
 .aut_play
-    form.form_aut#app
+    form(@submit.prevent="login").form_aut
         .remove
         .title Авторизация
         label.label
-            .text_login(for='name-input') Имя пользователя
+            .text_login Имя пользователя
             .label_login
                 .ico_user
                 .input
-                    input(name="name" type='name' v-model='name' class="name_input"  placeholder="Имя пользователя" required)
-                    .mess {{ errors }}
+                    input(name="name" type='name' v-model="user.name" class="name_input"  placeholder="Имя пользователя" required)
         label.label
             .text_login Пароль
             .label_login
                 .ico_pass
                 .input
-                    input(name="password" type="password" class="password_input" placeholder="Пароль" required)
+                    input(name="password" type="password" v-model="user.password" class="password_input" placeholder="Пароль" required)
         .button
-            button(type="button" @click.prevent="checkForm()").btn_login Отправить
+            button(type="submit").btn_login Отправить
 </template>
+<script>
+import $axios from "../request";
+
+export default {
+  data() {
+    return {
+      user: {
+        name: "Shaxmir0319",
+        password: "3127457s"
+      }
+    }
+  },
+  methods: {
+  async  login(){
+    try {
+      const { data: {token} } = await $axios.post('/login', this.user);
+    console.log(token);
+
+    localStorage.setItem('token', token);
+    $axios.defaults.headers['Authorization'] = `Bearer ${token}`;
+    this.$router.replace('/about');
+    } catch (error) {
+        alert("Какая та ошибка")
+      
+    }
+    
+   } 
+  }
+}
+</script>
 <style lang="postcss">
 /*LOGIN CSS*/
   .aut_play{

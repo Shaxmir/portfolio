@@ -20,6 +20,7 @@
 <script>
 import skillsAdd from "../comp/skills-add.vue";
 import skillsGroup from "../comp/skills-group.vue";
+import { mapActions } from 'vuex';
 
 export default {
     components: {
@@ -30,6 +31,16 @@ export default {
         return {
             showAddingForm: false
         }
+    },
+    methods: {
+        ...mapActions('categories',['fetchCategories'])   
+    },
+    created() {
+        try {
+            this.fetchCategories();
+        } catch (error) {
+            alert('Ошибка при загрузки категории');
+        }   
     }
 }
 </script>

@@ -4,7 +4,7 @@ form.form
         input(type="text" placeholder="Название" v-model="skillTitle").input_text
         .panel_edit
             a(href="#" @click.prevent="addSkillGroup").btn_ok
-            a(href="#" @click = "showAddingForm = false").btn_no
+            a(href="#" @click.prevent = "showAddingForm = false").btn_no
     .data_group
     label.new_skill
         input(type="text" placeholder="Название скила").input_skill
