@@ -5,7 +5,11 @@ form.form
         .panel_edit
             a(href="#").btn_ok
             a(href="#").btn_no
-    skills-item()
+    skills-item(
+        v-for="skill in skills" 
+        :key="skill.id"
+        :skill="skill"
+    )
     label.new_skill
         input(type="text" v-model="skill.title" placeholder="Название скилла").input_skill
         input(type="text" v-model="skill.percent" placeholder="100%").input_pro
@@ -26,7 +30,8 @@ export default {
         }
     },
     props: {
-        category: Object
+        category: Object,
+        skills: Array
     },
     components: {
         skillsItem

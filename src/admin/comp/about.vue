@@ -20,6 +20,7 @@
                 )
                     skills-group(
                         :category="category"
+                        :skills="filterSkillsCategoryId(category.id)"
                     )    
         pre {{ skills }}               
 </template>
@@ -48,7 +49,10 @@ export default {
     },
     methods: {
         ...mapActions('categories',['fetchCategories']),
-        ...mapActions('skills',['fetchSkills'])   
+        ...mapActions('skills',['fetchSkills']),
+        filterSkillsCategoryId(categoryId) {
+            return this.skills.filter(skill=> skill.category == categoryId)
+        }   
 
     },
     async created() {
