@@ -14,7 +14,7 @@ export default {
             state.skills = state.skills.filter(skill => skill.id != deletedSkillId);
         },
         EDIT_SKILL: (state, editedSkill) =>{
-            skill.skills = state.skills.map(skill => skill.id == editedSkill.id ? editedSkill : skill);
+            skill.skills = state.skills.map(skill => skill.id === editedSkill.id ? editedSkill : skill);
         }
     },
     actions: {
@@ -55,7 +55,7 @@ export default {
           commit('EDIT_SKILL', response.data.skill);
           return response;  
         } catch (error) {
-        alert('Ошибка в skills.js / admin EDIT_SKILL')
+       
             
         }            
     }
