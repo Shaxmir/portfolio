@@ -15,12 +15,13 @@
                 )
                     skills-add()
                 li.group_item(v-if="false")
-                    skills-group()                   
+                    skills-group()    
+        pre {{categories}}               
 </template>
 <script>
 import skillsAdd from "../comp/skills-add.vue";
 import skillsGroup from "../comp/skills-group.vue";
-import { mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 export default {
     components: {
@@ -31,6 +32,11 @@ export default {
         return {
             showAddingForm: false
         }
+    },
+    computed: {
+        ...mapState('categories', {
+            categories: state => state.categories
+        })
     },
     methods: {
         ...mapActions('categories',['fetchCategories'])   
