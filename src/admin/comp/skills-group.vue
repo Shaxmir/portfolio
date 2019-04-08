@@ -1,23 +1,47 @@
 <template lang="pug">
 form.form
     label.name_group
-        input(type="text" value="Workflow").input_text
+        input(type="text" :value="category.category").input_text
         .panel_edit
             a(href="#").btn_ok
             a(href="#").btn_no
-    .data_group
-        ul.skills_list
-            - var skills = ['Git','Terminal','Gulp','Webpack']
-            - var pro = ['50%','30%','10%','10%']
-            - for(var i = 0; i < skills.length; i++)
-                li.skills_item
-                    .skill_name= skills[i] 
-                    .skill_pro= pro[i]
-                    .skill_edit
-                        .skill_edit
-                        .skill_delete
+    skills-item()
     label.new_skill
-        input(type="text" placeholder="Название скилла").input_skill
-        input(type="text" placeholder="100%").input_pro
-        a(href="#").btn_plus +
+        input(type="text" v-model="skill.title" placeholder="Название скилла").input_skill
+        input(type="text" v-model="skill.percent" placeholder="100%").input_pro
+        a(href="#" @click.prevent="addNewSkill").btn_plus +
 </template>
+<script>
+import skillsItem from "../comp/skills-item.vue";
+import { mapActions} from 'vuex';
+
+export default {
+    data() {
+        return {
+            skill: {
+                category: this.category.id,
+                title: "",
+                percent: ""
+            }
+        }
+    },
+    props: {
+        category: Object
+    },
+    components: {
+        skillsItem
+        },
+methods: {
+    ...mapActions('skills', ['addSkill']),
+    async addNewSkill() {
+        try {
+            await this.addSkill(this.skill);
+            this.skill.title = "";
+            this.skill.percent = "";
+        } catch (error) {
+            alert('Ошибка в skills-group')
+        }
+    }
+},
+}
+</script>

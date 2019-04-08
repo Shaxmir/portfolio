@@ -14,9 +14,14 @@
                         v-if="showAddingForm"
                 )
                     skills-add()
-                li.group_item(v-if="false")
-                    skills-group()    
-        pre {{categories}}               
+                li.group_item(
+                    v-for="category in categories" 
+                    :key="category.id"
+                )
+                    skills-group(
+                        :category="category"
+                    )    
+        pre {{ skills }}               
 </template>
 <script>
 import skillsAdd from "../comp/skills-add.vue";
@@ -36,17 +41,28 @@ export default {
     computed: {
         ...mapState('categories', {
             categories: state => state.categories
+        }),
+        ...mapState('skills', {
+            skills: state => state.skills
         })
     },
     methods: {
-        ...mapActions('categories',['fetchCategories'])   
+        ...mapActions('categories',['fetchCategories']),
+        ...mapActions('skills',['fetchSkills'])   
+
     },
-    created() {
+    async created() {
         try {
-            this.fetchCategories();
+            await this.fetchCategories();
         } catch (error) {
             alert('Ошибка при загрузки категории');
-        }   
+        };
+        
+        try {
+            await this.fetchSkills();
+        } catch (error) {
+            alert('Ошибка при загрузки Скиллов');
+        };
     }
 }
 </script>
