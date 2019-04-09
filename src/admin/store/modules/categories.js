@@ -6,6 +6,9 @@ export default {
     mutations: {
         SET_CATEGORIES: (state, categories) => {
             state.categories = categories
+        },
+        DELETE_CATEGORIES: (state, removeGroupId) => {
+            state.categories = state.categories.filter(category => category.id != removeGroupId);
         }
     },
     actions: {
@@ -35,6 +38,16 @@ export default {
                 
             }
 
-         }
+         },
+         async removeCategories({commit}, categoriesId) {
+            try {
+              const response = await this.$axios.delete(`/categories/${categoriesId}`);
+              commit('DELETE_CATEGORIES', categoriesId);
+              return response;  
+            } catch (error) {
+            alert('Ошибка в categories.js / admin DELETE_CATEGORIES')
+                
+            }            
+        }
     }
 }

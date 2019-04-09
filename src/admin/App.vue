@@ -22,7 +22,6 @@
 </template>
 <script>
 import Vue from "vue";
-import aut from "./comp/aut";
 
 export default {
   data() {
@@ -33,9 +32,6 @@ export default {
         { title: "Работы", href: "/work" }
       ]
     };
-  },
-  components: {
-    aut
   }
   
 };

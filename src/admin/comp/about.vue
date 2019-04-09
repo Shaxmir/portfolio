@@ -22,7 +22,6 @@
                         :category="category"
                         :skills="filterSkillsCategoryId(category.id)"
                     )    
-        pre {{ skills }}               
 </template>
 <script>
 import skillsAdd from "../comp/skills-add.vue";

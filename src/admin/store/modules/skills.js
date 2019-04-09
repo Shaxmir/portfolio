@@ -14,7 +14,7 @@ export default {
             state.skills = state.skills.filter(skill => skill.id != deletedSkillId);
         },
         EDIT_SKILL: (state, editedSkill) =>{
-            skill.skills = state.skills.map(skill => skill.id === editedSkill.id ? editedSkill : skill);
+            state.skills = state.skills.map(skill => skill.id === editedSkill.id ? editedSkill : skill);
         }
     },
     actions: {

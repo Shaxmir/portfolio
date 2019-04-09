@@ -4,7 +4,7 @@ form.form
         input(type="text" :value="category.category").input_text
         .panel_edit
             a(href="#").btn_ok
-            a(href="#").btn_no
+            a(href="#" @click.prevent="deletedSkillGroup").btn_no
     skills-item(
         v-for="skill in skills" 
         :key="skill.id"
@@ -37,7 +37,16 @@ export default {
         skillsItem
         },
 methods: {
-    ...mapActions('skills', ['addSkill']),
+    ...mapActions('skills', ['addSkill', 'removeCategories']),
+    ...mapActions('categories', ['removeCategories']),
+    async deletedSkillGroup(){
+         try {
+            await this.removeCategories(this.category.id)
+            console.log('Запись удалена');
+        } catch (error) {
+            alert('Проблема с удалением Категории');
+        }
+    },
     async addNewSkill() {
         try {
             await this.addSkill(this.skill);

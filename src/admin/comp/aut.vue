@@ -19,6 +19,7 @@
             button(type="submit").btn_login Отправить
 </template>
 <script>
+
 import $axios from "../request";
 
 export default {
