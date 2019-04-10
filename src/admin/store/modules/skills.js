@@ -56,6 +56,7 @@ export default {
           return response;  
         } catch (error) {
        
+            alert('Какая ошибка при изменение скилла');
             
         }            
     }

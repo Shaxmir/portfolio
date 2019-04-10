@@ -59,10 +59,12 @@ export default {
       const file = e.target.files[0];
       this.rewiev.photo = file;
       const reader = new FileReader();
+          console.log(file);
       try {
         reader.readAsDataURL(file);
         reader.onload = () => {
           this.rendedPhotoUrl = reader.result;
+          console.log(this.rewiev.photo);
         };
       } catch (error) {
         alert("sh*t happens :(");

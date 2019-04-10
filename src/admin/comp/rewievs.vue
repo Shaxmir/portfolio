@@ -7,14 +7,12 @@ section.rewievs
         li.creat_new_rewievs(@click="showAddRewievs = true")
             .rewievs_plus +
             .text Добавить Отзыв
-        li.creat_new_rewievs(
+                 
+        group-rewievs(
             v-for="rew in rewievs" 
-            :key="rew.id"
+        :key="rew.id"
             :rew="rew"
         )
-            group-rewievs(
-                :rew="rew"
-            )
 </template>
 <script>
 import addRewievs from '../comp/add-rewievs.vue'
