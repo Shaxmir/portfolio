@@ -1,5 +1,6 @@
 import Vue from 'vue';
-
+import axios from "axios";
+import request from "../admin/request";
 import Flickity from 'vue-flickity';
 
 new Vue({
@@ -13,11 +14,15 @@ new Vue({
       flickityOptions: {
         prevNextButtons: false,
         pageDots: false,
-        groupCells: '100%'
+        groupCells: '100%',
+        rewievs: {}
         
         // any options from Flickity can be used
       }
     }
+  },
+  props: {
+    rewievs: Object
   },
   
   methods: {
@@ -28,5 +33,11 @@ new Vue({
     previous() {
       this.$refs.flickity.previous();
     }
+  },
+  created(){
+    axios.get('/reviews/118').then(response => {
+      this.rewievs = response.data
+  })
+   
   }
 });

@@ -17,9 +17,10 @@ script(type="text/x-template")#slaider-container
 
 script(type="text/x-template")#slaider-display
     .block_slaid
-        .number {{currentWork.id}}  
+        .number {{currentWork.id}} 
+        //-  
         .slaid_pic
-            img(:src="currentWork.photo").big_pic
+            img(:src="`https://webdev-api.loftschool.com/${currentWork.photo}`").big_pic
             btns(
                 @slide="direction => $emit('slide', direction)"
             )
@@ -53,18 +54,19 @@ script(type="text/x-template")#slaider-thumbs
             li.slaid_item(
                 v-for="(work, index) in works" :key="work.id"
                 :class="{active: currentWork.id == work.id}"
+
                 )
                     a(href="#"
                     @click.prevent="$emit('clickThumb',index)"
                     ).slaid_link
-                        img(:src="work.photo").slaid_pic
+                        img(:src="`https://webdev-api.loftschool.com/${work.photo}`").slaid_pic
 
 ///////////////////////////////////
 
 
 script(type="text/x-template")#slaider-tags
     ul.info_tags
-        li.info_item(v-for="tag in tagsArray") {{tag}}
+        li.info_item(v-for="(tag, index) in tagsArray") {{tag}}
 
 
 /////////////////////////////////////////////
@@ -74,11 +76,12 @@ script(type="text/x-template")#slaider-tags
 script(type="text/x-template")#slaider-info
     .block_info
         tags(
+            :currentWork="currentWork"
             :tagsArray="tagsArray"
         )
         .info_text
             h2 {{currentWork.title}}
-            span {{currentWork.desc}}
+            span {{currentWork.description}}
         .info_link
             .svg_link
             a.link(:href="currentWork.link") Посмотреть сайт

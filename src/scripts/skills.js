@@ -1,11 +1,11 @@
 import Vue from  'vue';
-
+import axios from "axios";
+import request from "../admin/request";
 
 const skill = {
     template: '#skills',
     props: {
-        skillName: String,
-        skillPercent: Number
+        skill: Object
     },
     methods: {
         drawColoredCircle() {
@@ -13,11 +13,12 @@ const skill = {
           const dashArray = parseInt(
             getComputedStyle(circle).getPropertyValue("stroke-dasharray")
           );
-          const percent = (dashArray / 100) * (100 - this.skillPercent);
+          const percent = (dashArray / 100) * (100 - this.skill.percent);
     
           circle.style.strokeDashoffset = percent;
         }
       },
+      
       mounted() {
         this.drawColoredCircle();
       }
@@ -29,7 +30,8 @@ const skillsRow = {
         skill
     },
     props: {
-        skill: Object
+        skills: Object,
+        cat: Object
     }
 }
 
@@ -43,11 +45,25 @@ new Vue ({
     },
     data(){
         return {
-            skills: {}
+            skills: {},
+            categories: {}
         }
     },
+    props: {
+      skills: Object
+    },
+    methods: {
+      filterSkillsCategoryId(categoryId) {
+        return this.skills.filter(skill=> skill.category == categoryId)
+    } 
+    },
     created(){
-        const data  = require('../data/skills.json');
-        this.skills = data;
+      axios.get('/skills/118').then(response => {
+        this.skills = response.data
+    }),
+    axios.get('/categories/118').then(response => {
+      this.categories = response.data
+  })
+     
     }
 })

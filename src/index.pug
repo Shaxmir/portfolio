@@ -112,66 +112,15 @@ html(lang="en")
                     button.left_scroll(@click="previous()")
                     button.right_scroll(@click="next()")
                 flickity(ref="flickity" :options="flickityOptions").reviews_info
-                  .review.carousel-cell
+                  .review.carousel-cell(v-for="rew in rewievs" :key="rew.id")
                     .review_text_one
-                      span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                      span {{rew.text}}
                     .info_review
                       .review_avatar
-                        
-                        .rev_user2
+                        .rev_user(:style="`backgroundImage : url('https://webdev-api.loftschool.com/${rew.photo}')`")
                       .review_text
-                        h3 Ковальчук Дмитрий
-                        span Оснаватель LoftSchool
-                  .review.carousel-cell
-                    .review_text_one
-                      span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .info_review
-                      .review_avatar
-                        
-                        .rev_user3
-                      .review_text
-                        h3 Владимир Сабанцев
-                        span Оснаватель LoftSchool
-                  .review.carousel-cell
-                    .review_text_one
-                      span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .info_review
-                      .review_avatar
-                        
-                        .rev_user3
-                      .review_text
-                        h3 Владимир Сабанцев
-                        span Оснаватель LoftSchool
-                  .review.carousel-cell
-                    .review_text_one
-                      span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .info_review
-                      .review_avatar
-                        
-                        .rev_user3
-                      .review_text
-                        h3 Владимир Сабанцев
-                        span Оснаватель LoftSchool
-                  .review.carousel-cell
-                    .review_text_one
-                      span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .info_review
-                      .review_avatar
-                        
-                        .rev_user3
-                      .review_text
-                        h3 Владимир Сабанцев
-                        span Оснаватель LoftSchool
-                  .review.carousel-cell
-                    .review_text_one
-                      span Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .info_review
-                      .review_avatar
-                        
-                        .rev_user3
-                      .review_text
-                        h3 Владимир Сабанцев
-                        span Оснаватель LoftSchool
+                        h3 {{rew.author}}
+                        span {{rew.occ}}
               .call#yak5
                 .title Связаться со мной
                 form.form
