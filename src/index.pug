@@ -111,7 +111,7 @@ html(lang="en")
                   .scrolls
                     button.left_scroll(@click="previous()")
                     button.right_scroll(@click="next()")
-                flickity(ref="flickity" :options="flickityOptions").reviews_info
+                flickity(ref="flickity" :options="flickityOptions" v-if="Object.keys(rewievs).length > 0").reviews_info
                   .review.carousel-cell(v-for="rew in rewievs" :key="rew.id")
                     .review_text_one
                       span {{rew.text}}
