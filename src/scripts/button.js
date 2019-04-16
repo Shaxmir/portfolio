@@ -8,14 +8,14 @@
 //         'progress-button': Button
 //       }
 // })
-import Vue from 'vue'
-import VueScrollProgressBar from '@guillaumebriday/vue-scroll-progress-bar'
+// import Vue from 'vue'
+// import VueScrollProgressBar from '@guillaumebriday/vue-scroll-progress-bar'
 
-Vue.use(VueScrollProgressBar)
+// Vue.use(VueScrollProgressBar)
 
-new Vue({
-    el: '.scrooll_bar',
-    components: {
-        'progress-buttonvue-scroll-progress-bar': VueScrollProgressBar
-      }
-})
+// new Vue({
+//     el: '.scrooll_bar',
+//     components: {
+//         'progress-buttonvue-scroll-progress-bar': VueScrollProgressBar
+//       }
+// })

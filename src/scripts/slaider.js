@@ -1,5 +1,6 @@
 import Vue from "vue";
-
+import axios from "axios";
+import request from "../admin/request";
 
 const btns = {
     template: "#slaider-btns"
@@ -22,14 +23,7 @@ const thumbs = {
 
 const display = {
     template: "#slaider-display",
-    data: {
     
-            styleObject: {
-                right: '180px'
-              }
-
-    
-    },
     
     components: {
         btns, thumbs
@@ -38,12 +32,6 @@ const display = {
         works: Array,
         currentWork: Object
     }
-    // computed: {
-    //     reversedWork(){
-    //         const works = [...this.works];
-    //         return works.reverse();
-    //     }
-    // }
 }
 const tags = {
     template: "#slaider-tags",
@@ -62,7 +50,7 @@ const info = {
     },
     computed: {
         tagsArray(){
-            return this.currentWork.skills.split(',');
+            return this.currentWork.techs.split(',');
         }
     }
 }
@@ -94,7 +82,7 @@ new Vue(
             }
         },
         methods: {
-           
+            
             makeInfiniti(value) {
                 const worksAmout = this.works.length - 1;
                 if (value > worksAmout) this.currentIndex = 0;
@@ -115,19 +103,21 @@ new Vue(
             handlSlide(direction){
                 switch (direction) {
                     case 'next':
-                        this.works.unshift(...this.works.splice(1,3));
+                        this.works.unshift(...this.works.splice(1,2));
                         
                         break;
                     case 'prev':
-                    this.works.unshift(...this.works.splice(3,1));
+                    this.works.unshift(...this.works.splice(2,1));
                         break;
                 }
                 console.log(this.currentWork.id);
             } 
         },
         created(){
-            const data  = require('../data/slaider.json');
-            this.works = this.makeArrImg(data);
+            axios.get('/works/118').then(response => {
+                this.works = response.data
+            })
+
 
         }
     }
