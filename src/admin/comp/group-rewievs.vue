@@ -1,5 +1,5 @@
 <template lang="pug">
-li(style="list-style: none;")
+li.rew_item_list
     .the_rewievs(v-if="openEditMode == true")
         .img_rewievs
             img(:src="`https://webdev-api.loftschool.com/${rew.photo}`" alt="").rewievs_image

@@ -3,7 +3,7 @@ section.rewievs
     .title Блок "Отзывы"
     add-rewievs(v-if="showAddRewievs"
     :showAddRewievs="showAddRewievs")
-    .rewievs_2
+    ul.rewievs_2
         li.creat_new_rewievs(@click="showAddRewievs = true")
             .rewievs_plus +
             .text Добавить Отзыв

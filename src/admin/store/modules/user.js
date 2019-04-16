@@ -6,7 +6,10 @@ export default {
   mutations: {
     SET_USER: (state, user) => {
       state.user = user;
-    }
+    },
+    DELETE_USER: (state) => {
+      state.user = state.user;
+  }
   },
   getters: {
     userIsLogged: state => {
@@ -16,5 +19,20 @@ export default {
 
       return userObjectIsEmpty === false;
     }
+  },
+  actions: {
+    async logout({commit}) {
+      try {
+          const response = await this.$axios.post('/logout');
+          commit ('DELETE_USER');
+          localStorage.removeItem('token');
+          this.$axios.defaults.headers['Authorization'] = '';
+          return response
+      } catch (error) {
+          throw new Error (
+              error.response.data.error || error.response.data.message
+          )
+      }
+  }
   }
 }

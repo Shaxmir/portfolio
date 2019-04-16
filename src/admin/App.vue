@@ -8,7 +8,7 @@
                 .name_lastName Шахмир Ахмедилов
                 .name_panel Панель администрирования
               .head_exit
-                a(href="#").exit_link Выйти
+                a(href="#" @click.prevent="deleteThisToken").exit_link Выйти
             nav.nav_menu
               ul.nav_list
                 li.nav_item(v-for="tab in tabs")
@@ -22,6 +22,7 @@
 </template>
 <script>
 import Vue from "vue";
+import { mapActions } from 'vuex';
 
 export default {
   data() {
@@ -32,6 +33,18 @@ export default {
         { title: "Работы", href: "/work" }
       ]
     };
+  },
+
+  methods: {
+     ...mapActions('user', ['logout']),
+     async deleteThisToken () {
+                try {
+                    await this.logout();
+                    this.$router.replace('/aut');
+                } catch (error) {
+                    console.log(error);
+                }
+            }
   }
   
 };
