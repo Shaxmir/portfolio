@@ -5,26 +5,44 @@
     padding: 10% 0;
     width: 100%;
     .reviews {
-        display: flex;
+    display: flex;
     flex-direction: column;
     width: 100%;
     .reviews_info {
-        display: flex;
+        display: inline;
+        width: 100%;
+        overflow: hidden;
+        @include phones {
+            width: 100%;
+            overflow: hidden;
+        }
     }
     .reviews_scroll {
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 60%;
-            padding: 75px 0;
+            margin: 75px 0;
+            @include phones {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
             h1 {
                 font-weight: bold;
+                @include phones {
+                    font-size: 24px;
+                }
             }
             .scrolls {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 width: 150px;
+                @include phones {
+                    margin-top: 20px;
+                }
                 .left_scroll {
                     width: 50px;
                     height: 50px;
@@ -32,7 +50,13 @@
                     border-radius: 50%;
                     cursor: pointer;
                     position: relative;
-                
+                    background: none;
+                    &:hover {
+                        border: 2px solid #fff;
+                        &::before {
+                        background: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%);
+                    }
+                    }
                    
                     &::before {
                         content: "";
@@ -53,6 +77,13 @@
                     border-radius: 50%;
                     cursor: pointer;
                     position: relative;
+                    background: none;
+                    &:hover {
+                        border: 2px solid #fff;
+                        &::before {
+                        background: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%);
+                    }
+                    }
                     &::before {
                         content: "";
                         position: absolute;
@@ -62,18 +93,30 @@
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%,-50%);
+                        
                     }
                 }
             }
         }
     .review {
         padding-left: 70px;
+        width: 50%;
+        @include phones {
+            padding-left: 0;
+            width: 100%;
+    flex: 0 0 auto;
+    position: relative;
+        }
         .review_text_one {
             padding: 25px;
             font-size: 16px;
             color: #adadac;
             font-weight: 600;
             position: relative;
+    @include tablets {
+        padding: 25px 0 25px 25px;
+    }
+
             span{
                 &::before {
                     content: "";
@@ -83,6 +126,13 @@
                     background: svg-load('quote.svg', fill=rgba(#1b1f22, 0.8), width=100%, height=100%);
                     top: 25px;
                     left: -60px;
+                    @include desktop {
+                        width: 60px;
+                        height: 60px;
+                    }
+                    @include phones {
+                        display: none;
+                    }
     }
             }
     }
@@ -93,20 +143,26 @@
         align-items: center;
         margin-left: 20px;
         margin-top: 20px;
+    @include tablets {
+        margin: 0;
+    }
+
         .review_avatar {
             width: 76px;
             height: 76px;
+            @include desktop {
+                width: 66px;
+                height: 66px;
+            }
 
-            @each $var in user2, user3 {
-                .rev_#{$var} {
+            .rev_user {
                     width: 100%;
                     height: 100%;
                     border-radius: 50%;
-                    background-image: url('../images/content/#{$var}.jpg');
                     background-size: cover;
                     background-repeat: no-repeat;
                 }
-            }
+            
 
             
         }
@@ -118,10 +174,16 @@
             h3 {
                 font-weight: bold;
                 padding: 5px 0;
+                @include desktop {
+                    font-size: 16px;
+                }
             }
             span {
                 color: #adadac;
             font-weight: 600;
+            @include desktop {
+                font-size: 14px;
+            }
             }
         }
     }
