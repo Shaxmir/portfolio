@@ -1,0 +1,23 @@
+script(type="text/x-template")#skills-list
+    .vakues_skills
+        ul.skill_list
+            li.skill_item(v-for="cat in categories" :key="cat.id")
+                skills-row(
+                    :cat="cat"
+                    :skills="filterSkillsCategoryId(cat.id)"
+                )
+script(type="text/x-template")#skills-row
+    .front-end
+        h2 {{cat.category}}
+        ul.rounds
+            li.data(v-for="skill in skills") 
+                skill(
+                    :skill="skill"
+                )
+script(type="text/x-template")#skills
+    .skill_round
+        span.skill_name {{skill.title}}
+        svg(viewBox="0 0 100 100" preserveAspectRatio="none").round_svg
+            circle.circle(cx="50" cy="50" r="40").circle_under
+            circle.circle(cx="50" cy="50" r="40" ref="color-circle").circle_above
+            
